@@ -238,6 +238,8 @@ module.exports = {
      *  Resource Sharing rules for the source. `httpStaticCors` can be used to
      *  set a default cors policy across all static routes.
      */
+      httpStatic: [{path:'./img',root:"/img/"}],
+
     //httpStatic: [
     //    {path: '/home/nol/pics/',    root: "/img/"},
     //    {path: '/home/nol/reports/', root: "/doc/"},
