@@ -1,0 +1,14 @@
+{
+    "name": "ResultCouter",
+    "description": "Erfassung von Schießergebnissen und Darstellung der Ergebnisse",
+    "version": "1.0.0",
+    "dependencies": {
+        "node-red-node-sqlite": "1.1.0"
+    },
+    "node-red": {
+        "settings": {
+            "flowFile": "resultcounter.json",
+            "credentialsFile": "resultcounter_cred.json"
+        }
+    }
+}
