@@ -2,7 +2,7 @@
   
 required nodejs  
   
-git clone git@github.com:der-joerich/ResultCounter.git  
+git clone https://github.com/der-joerich/ResultCounter.git  
 cd ResultCounter  
 npm install  
 chmod +x start-node-red.sh  
