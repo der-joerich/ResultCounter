@@ -1151,60 +1151,6 @@
         ]
     },
     {
-        "id": "ba6437313d6cdb72",
-        "type": "ui-table",
-        "z": "831b2fedf9359f4d",
-        "d": true,
-        "group": "2ec8461e5b0d2647",
-        "name": "Eventliste",
-        "label": "text",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "maxrows": "0",
-        "autocols": true,
-        "showSearch": true,
-        "selectionType": "click",
-        "columns": [
-            {
-                "title": "Datum",
-                "key": "datum",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Bezeichnung",
-                "key": "event",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Waffe",
-                "key": "waffe",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "löschen",
-                "key": "loeschen",
-                "type": "button",
-                "width": "20",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "append",
-        "x": 780,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "ad7d027a75b505af",
         "type": "sqlite",
         "z": "831b2fedf9359f4d",
@@ -1216,7 +1162,6 @@
         "y": 60,
         "wires": [
             [
-                "ba6437313d6cdb72",
                 "81ccfb74b04bcae6"
             ]
         ]
