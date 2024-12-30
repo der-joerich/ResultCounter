@@ -3,8 +3,11 @@
     "description": "Erfassung von Schießergebnissen und Darstellung der Ergebnisse",
     "version": "1.0.0",
     "dependencies": {
-        "node-red-node-sqlite": "1.1.0"
-    },
+        "@flowfuse/node-red-dashboard": "~1.19.1",
+        "node-red": "^4.0.5",
+        "node-red-node-sqlite": "~1.1.0"
+      },
+
     "node-red": {
         "settings": {
             "flowFile": "resultcounter.json",
