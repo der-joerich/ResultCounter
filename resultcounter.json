@@ -158,7 +158,7 @@
     {
         "id": "b77de3d434654ecd",
         "type": "ui-group",
-        "name": "Ergebnissliste",
+        "name": "Ergebnisliste",
         "page": "8768af462ad343a0",
         "width": "7",
         "height": "1",
@@ -338,9 +338,9 @@
     {
         "id": "8768af462ad343a0",
         "type": "ui-page",
-        "name": "Ergebnisse",
+        "name": "Ergebnise",
         "ui": "1739e78f07e241af",
-        "path": "/ergebnisse",
+        "path": "/ergebnise",
         "icon": "monitor-dashboard",
         "layout": "notebook",
         "theme": "ea85f51ae10a5ea3",
@@ -395,7 +395,7 @@
                 "t": "set",
                 "p": "app",
                 "pt": "global",
-                "to": "{\"name\":\"ResultCouter\",\"version\":\"1.0.1\",\"beschreibung\":\"Eine Ergebniserfassung geschrieben für den Schützenverein Göritzhain 1992 e.V\",\"Entwickler\":\"JOErICH\",\"Kontakt\":\"support@joerich.de\"}",
+                "to": "{\"name\":\"ResultCouter\",\"version\":\"1.1.0\",\"beschreibung\":\"Eine Ergebniserfassung geschrieben für den Schützenverein Göritzhain 1992 e.V\",\"Entwickler\":\"JOErICH\",\"Kontakt\":\"support@joerich.de\"}",
                 "tot": "json"
             }
         ],
@@ -404,8 +404,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
-        "y": 100,
+        "x": 570,
+        "y": 140,
         "wires": [
             [
                 "416b944e178da39c"
@@ -433,8 +433,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 390,
-        "y": 100,
+        "x": 350,
+        "y": 120,
         "wires": [
             [
                 "92d04e6f69df6fe2"
@@ -551,12 +551,20 @@
                 "type": "number",
                 "required": false,
                 "rows": null
+            },
+            {
+                "label": "Vereinskürzel",
+                "key": "verein",
+                "type": "text",
+                "required": false,
+                "rows": null
             }
         ],
         "formValue": {
             "Vorname": "",
             "Name": "",
-            "mgnr": ""
+            "mgnr": "",
+            "verein": ""
         },
         "payload": "",
         "submit": "Speichern",
@@ -625,7 +633,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "UPDATE mitglieder SET Name = '{{payload.Name}}', Vorname= '{{payload.Vorname}}', mgnr= '{{payload.mgnr}}' WHERE id = '{{flow.aendern_ID}}'",
+        "template": "UPDATE mitglieder SET Name = '{{payload.Name}}', Vorname= '{{payload.Vorname}}', mgnr= '{{payload.mgnr}}', verein='{{payload.verein}}'  WHERE id = '{{flow.aendern_ID}}'",
         "output": "str",
         "x": 650,
         "y": 260,
@@ -1102,6 +1110,16 @@
         ]
     },
     {
+        "id": "307b9a1386ac0cb1",
+        "type": "comment",
+        "z": "2a175dcb59821ade",
+        "name": "GLOBABLE Variable",
+        "info": "",
+        "x": 550,
+        "y": 100,
+        "wires": []
+    },
+    {
         "id": "27035731e86e1e3d",
         "type": "inject",
         "z": "831b2fedf9359f4d",
@@ -1173,7 +1191,7 @@
         "name": "Event bearbeiten",
         "group": "2ec8461e5b0d2647",
         "label": "",
-        "order": 2,
+        "order": 1,
         "width": 0,
         "height": 0,
         "options": [
@@ -1341,7 +1359,7 @@
         "page": "",
         "ui": "",
         "name": "Eventliste",
-        "order": 3,
+        "order": 2,
         "width": 0,
         "height": 0,
         "head": "",
@@ -1845,12 +1863,13 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 340,
+        "x": 320,
         "y": 120,
         "wires": [
             [
                 "5d208c688e7b2d7c",
-                "04c592cf615bf47c"
+                "04c592cf615bf47c",
+                "3da6d3c8b271405f"
             ]
         ]
     },
@@ -1859,7 +1878,7 @@
         "type": "debug",
         "z": "b4599c1f41a6367f",
         "name": "debug 6",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1867,8 +1886,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 380,
+        "x": 860,
+        "y": 400,
         "wires": []
     },
     {
@@ -1950,13 +1969,13 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n  <v-row>\n    <v-col cols=\"16\" md=\"6\">\n      <v-card :subtitle=\"event.datum\"\n        :text=\"event.waffe + ' mit ' + event.anz_schuesse + ' Schüssen und ' + event.durchgaenge + ' Durchgängen'\"\n        :title=\"event.event\"></v-card>\n       \n     </v-col>\n    <v-col cols=\"4\" md=\"50\" align-self=\"end\">\n       \n          <v-row align=\"start\" style=\"height: 60px;\">\n      <v-btn color=\"black\" :disabled=\"erfassung_laeuft\" @click=\"onClick('eventwechseln')\">Event wechseln</v-btn>\n      </v-row>\n      <v-row  align=\"start\"\n        style=\"height: 60px;\">\n      <v-btn :color=\"buttoncolor\" :disabled=\"btnStart\" @click=\"onClick('erfassung')\">{{startbuttontext}}</v-btn>\n      </v-row>\n    </v-col>\n   \n  </v-row>\n  <v-row>\n    <!-- Namen der Schuetzen -->\n    <v-col cols=\"20\" md=\"100\">\n      <v-flex v-for=\"(s,index) in schuetzen\" :key=\"index\">\n       <v-chip class=\"namenChips\" :color=\"getfarbe(s.id,index)\" :prepend-icon=\"getHaekchen(s.id,index)\"><button @click=\"select(s.id,index)\">{{s.Name}} {{s.Vorname}} </button></v-chip>\n    </v-col>\n  </v-row> \n    <!-- Erfassungsblock einblenden-->\n    <v-row v-if=\"erfassungsBlockSichtbar\">\n      <v-container class=\"spacing-playground pa-6\" fluid>\n      <v-flex v-for=\"a in event.durchgaenge\">\n        <v-btn :color=\"get_Btn_Duchgang_Color(a)\" variant=\"flat\" @click=\"durchgangclick(a)\">Durchgang {{a}}</v-btn>\n      </v-flex>\n      </v-container>\n      <!-- Trefferliste anzeigen-->\n        <v-container class=\"spacing-playground pa-6\" fluid >\n          <v-flex v-for=\"(i,index) in treffen_im_durchgang\" :key=\"index\">\n            <v-chip class=\"TrefferChips\":color=\"getChipColor(index)\" variant=\"flat\"  >\n              <button @click=\"trefferwaehlen(index)\" >{{i}}</button></v-btn>\n          </v-flex>\n        </v-container>\n      <!-- Zahlenblock erzeugen-->\n      <v-container v-if=\"btnspeichernsichtbar\" class=\"spacing-playground pa-6\" fluid>\n      <v-row align=\"center\" >\n      <v-flex v-for=\"index in 7\" :key=\"index\">\n        <v-btn class=\"zahlenblock\" color=\"white\" @click=\"neuerwert(index-1)\">{{index-1}}</v-btn>\n      </v-flex>\n      </v-row>\n      <v-row align=\"center\">\n        <v-flex v-for=\"index in 4\" :key=\"index\">\n          <v-btn class=\"zahlenblock\" color=\"black\" @click=\"neuerwert(index+6)\">{{index+6}}</v-btn>\n        </v-flex>\n        </v-row>\n      </v-row>\n      \n    </v-container>\n   \n  \n  </v-row>\n  <v-row v-if=\"btnspeichernsichtbar\">\n    <v-container class=\"spacing-playground pa-2\">\n      <v-btn  @click=\"dg_speichern\">Speichern</v-btn>\n    </v-container>\n  </v-row>\n</template>\n<script>\n  export default {\n    data () {\n      const event ={datum:\"\",waffe:\"Waffe noch nicht gewählt\",anz_schuesse:0,durchgaenge:0};\n      const schuetzen = [];\n      const ausgewaehlte_schuetzen_id = 0;\n      const erfassung_laeuft = false;\n      const startbuttontext =\"Erfassung beginnen\"\n      const buttoncolor = \"green\";\n      const erfassungsBlockSichtbar=false;\n      const btnspeichernsichtbar=false;\n      const btnStart=true;\n      const treffen_im_durchgang = [];\n      const dg_nr=0;\n      const ausgewaehltesErgebniss =0;\n      return {\n          event,\n          schuetzen,\n          startbuttontext,\n          buttoncolor,\n          ausgewaehlte_schuetzen_id,\n          erfassungsBlockSichtbar,\n          btnStart,\n          btnspeichernsichtbar,\n          treffen_im_durchgang,\n          dg_nr,\n          ausgewaehltesErgebniss\n      }\n    },\n    watch: {\n      // watch for message\n      msg: function() {\n        if (this.msg.payload != undefined) {\n          if (this.msg.payload.action ==\"eventliste\") {\n            this.event=this.msg.payload;\n            this.schuetzen=[];\n            this.btnStart=false;\n          } \n          if (this.msg.payload.action ==\"schuetzen\") {\n            this.schuetzen=this.msg.payload.schuetzen;\n          }\n          if (this.msg.payload.dg_return) {\n            this.treffen_im_durchgang=this.msg.payload.dg;\n            if (this.treffen_im_durchgang.length !== 0 ) {\n                if  (confirm(\"Achtung! In diesem Durchgang wurden bereits Ergenisse erfasst. Möchtest du diese bearbeiten?\", \"Änderungen durchführen?\") == false) {\n                    this.btnspeichernsichtbar=false;\n                };\n            }\n          }\n        }\n        \n      }\n    },\n    methods: {\n      onClick: function (item) {\n        const payload = {};\n        if (item !== undefined ) {\n          payload.action = item;\n          if (item==\"erfassung\") {\n            if (!this.erfassung_laeuft) {\n              this.erfassung_laeuft=true;\n              this.buttoncolor=\"red\";\n              this.startbuttontext=\"Erfassung unterbrechen\";\n              payload.laeuft=true;\n              \n            } else {\n              this.erfassung_laeuft=false;\n              this.buttoncolor=\"green\";\n              this.startbuttontext=\"Erfassung beginnen\";\n              payload.laeuft=false;\n              this.erfassungsBlockSichtbar=false;\n              this.btnspeichernsichtbar=false;\n              this.ausgewaehlte_schuetzen_id=0;\n              this.treffen_im_durchgang=[];\n            }\n          } \n          this.send({ payload });\n        }\n      },\n      select: function (item,index) {\n        if (item !== undefined ) {\n          if (!this.erfassung_laeuft) {\n             if (this.schuetzen[index].delete_moeglich) {  \n              const payload = {};\n              payload.action = \"loeschen\";\n              payload.id=item;\n              payload.eventID=this.event.id;\n              this.send({ payload });\n            } else {\n              alert (\"Ein löschen ist nicht möglich, da schon Ergebnisse erfasst wurde. Bitte erst alle Werte auf 0 setzen\");\n            }\n            \n          } else {\n            this.ausgewaehlte_schuetzen_id = item;\n            this.btnspeichernsichtbar=false;\n            this.erfassungsBlockSichtbar=true;\n            this.dg_nr=0;\n            this.btnspeichernsichtbar=false;\n            this.treffen_im_durchgang=[];\n          }\n        }\n      },\n      getfarbe: function (item,index) {\n       if (item == this.ausgewaehlte_schuetzen_id) {\n          return 'red';\n        } \n        if (!this.schuetzen[index].delete_moeglich) {\n          return 'green';\n          }else {\n          return 'black';\n        }\n\n      },\n      getHaekchen: function (item,index) {\n        if (!this.schuetzen[index].delete_moeglich) {\n          return 'mdi-checkbox-marked-circle';\n        }\n      },\n      get_Btn_Duchgang_Color: function(item) {\n        if (item == this.dg_nr) {\n          return 'green';\n          }else {\n            return '#E1F5FE';\n          }\n      },\n      getChipColor: function (item) {\n      if (item !== undefined ) {\n      if (item == this.ausgewaehltesErgebniss) {\n      return 'yellow';\n      } else {\n      return 'green';\n      }\n      }\n      },\n      trefferwaehlen: function (event) {\n        this.ausgewaehltesErgebniss = event;\n      },\n      neuerwert: function (item) {\n        if (item !== undefined ) {\n          this.treffen_im_durchgang[this.ausgewaehltesErgebniss]=item;\n            if (this.ausgewaehltesErgebniss+1<parseInt(this.event.anz_schuesse)) {\n               this.ausgewaehltesErgebniss++; \n            }else {\n              this.ausgewaehltesErgebniss = 0;\n            }\n          }\n      },\n      durchgangclick: function (item) {\n        //daten des Schuetzen vom Durchgang anfragen in Watch return erwarten\n            this.dg_nr=item;\n            this.btnspeichernsichtbar=true;\n            const payload = {};\n            payload.action = \"durchgangladen\";\n            payload.id=this.ausgewaehlte_schuetzen_id ;\n            payload.eventID=this.event.id;\n            payload.dg=item;\n            this.ausgewaehltesErgebniss = 0\n            this.send({ payload });\n      },\n      dg_speichern: function () {\n            this.btnspeichernsichtbar=false;\n            const payload = {};\n            payload.action = \"durchgangspeichern\";\n            payload.id=this.ausgewaehlte_schuetzen_id ;\n            payload.eventID=this.event.id;\n            payload.dg_nr=this.dg_nr;\n            payload.dg=this.treffen_im_durchgang;\n            this.send({ payload });\n            this.treffen_im_durchgang=[];\n            this.ausgewaehlte_schuetzen_id  =0;\n            this.dg_nr=0;\n            this.erfassungsBlockSichtbar=false;\n      }\n    }\n  }\n    </script>\n\n \n<style>\n  .TrefferChips{\n    width: 45px;\n    height: 45px;\n    margin: 2px;\n    justify-content: center;\n  }\n  .namenChips{\n    justify-content: center;\n  }\n  \n  .TrefferChips .v-chip__content {\n    color: black !important;\n    font-weight: bold;\n    font-size: x-large;\n    }\n  .zahlenblock {\n      font-weight: bold;\n      font-size: x-large;\n  }\n</style> ",
+        "format": "<template>\n  <v-row>\n    <v-col cols=\"16\" md=\"6\">\n      <v-card :subtitle=\"event.datum\"\n        :text=\"event.waffe + ' mit ' + event.anz_schuesse + ' Schüssen und ' + event.durchgaenge + ' Durchgängen'\"\n        :title=\"event.event\"></v-card>\n       \n     </v-col>\n    <v-col cols=\"4\" md=\"50\" align-self=\"end\">\n       \n          <v-row align=\"start\" style=\"height: 60px;\">\n      <v-btn color=\"black\" :disabled=\"erfassung_laeuft\" @click=\"onClick('eventwechseln')\">Event wechseln</v-btn>\n      </v-row>\n      <v-row  align=\"start\"\n        style=\"height: 60px;\">\n      <v-btn :color=\"buttoncolor\" :disabled=\"btnStart\" @click=\"onClick('erfassung')\">{{startbuttontext}}</v-btn>\n      </v-row>\n    </v-col>\n   \n  </v-row>\n  <v-row>\n    <!-- Namen der Schuetzen -->\n    <v-col cols=\"20\" md=\"100\">\n      <v-flex v-for=\"(s,index) in schuetzen\" :key=\"index\">\n       <v-chip class=\"namenChips\" :color=\"getfarbe(s.id,index)\" :prepend-icon=\"getHaekchen(s.id,index)\"><button @click=\"select(s.id,index)\">{{s.Name}} {{s.Vorname}} </button></v-chip>\n    </v-col>\n  </v-row> \n    <!-- Erfassungsblock einblenden-->\n    <v-row v-if=\"erfassungsBlockSichtbar\">\n      <v-container class=\"spacing-playground pa-6\" fluid>\n      <v-flex v-for=\"a in event.durchgaenge\">\n        <v-btn :color=\"get_Btn_Duchgang_Color(a)\" variant=\"flat\" @click=\"durchgangclick(a)\">Durchgang {{a}}</v-btn>\n      </v-flex>\n      </v-container>\n      <!-- Trefferliste anzeigen-->\n        <v-container class=\"ContainerTreffer\" >\n          <v-flex v-for=\"(i,index) in treffen_im_durchgang\" :key=\"index\">\n                   <v-chip class=\"TrefferChips\" :color=\"getChipColor(index)\" variant=\"flat\"  >\n              <button @click=\"trefferwaehlen(index)\" >{{i}}</button></v-btn>\n            </v-chip>\n          </v-flex>\n        </v-container>\n      <!-- Zahlenblock erzeugen-->\n      <v-container v-if=\"btnspeichernsichtbar\" class=\"spacing-playground pa-6\" fluid>\n      <v-row align=\"center\" >\n      <v-flex v-for=\"index in 7\" :key=\"index\">\n        <v-btn class=\"zahlenblock\" color=\"white\" @click=\"neuerwert(index-1)\">{{index-1}}</v-btn>\n      </v-flex>\n      </v-row>\n      <v-row align=\"center\">\n        <v-flex v-for=\"index in 4\" :key=\"index\">\n          <v-btn class=\"zahlenblock\" color=\"black\" @click=\"neuerwert(index+6)\">{{index+6}}</v-btn>\n        </v-flex>\n        </v-row>\n      </v-row>\n      \n    </v-container>\n   \n  \n  </v-row>\n  <v-row v-if=\"btnspeichernsichtbar\">\n    <v-container class=\"spacing-playground pa-2\">\n      <v-btn  @click=\"dg_speichern\">Speichern</v-btn>\n    </v-container>\n  </v-row>\n</template>\n<script>\n  export default {\n    data () {\n      const event ={datum:\"\",waffe:\"Waffe noch nicht gewählt\",anz_schuesse:0,durchgaenge:0};\n      const schuetzen = [];\n      const ausgewaehlte_schuetzen_id = 0;\n      const erfassung_laeuft = false;\n      const startbuttontext =\"Erfassung beginnen\"\n      const buttoncolor = \"green\";\n      const erfassungsBlockSichtbar=false;\n      const btnspeichernsichtbar=false;\n      const btnStart=true;\n      const treffen_im_durchgang = [];\n      const dg_nr=0;\n      const ausgewaehltesErgebniss =0;\n      return {\n          event,\n          schuetzen,\n          startbuttontext,\n          buttoncolor,\n          ausgewaehlte_schuetzen_id,\n          erfassungsBlockSichtbar,\n          btnStart,\n          btnspeichernsichtbar,\n          treffen_im_durchgang,\n          dg_nr,\n          ausgewaehltesErgebniss\n      }\n    },\n    watch: {\n      // watch for message\n      msg: function() {\n        if (this.msg.payload != undefined) {\n          if (this.msg.payload.action ==\"eventliste\") {\n            this.event=this.msg.payload;\n            this.schuetzen=[];\n            this.btnStart=false;\n          } \n          if (this.msg.payload.action ==\"schuetzen\") {\n            this.schuetzen=this.msg.payload.schuetzen;\n          }\n          if (this.msg.payload.dg_return) {\n            this.treffen_im_durchgang=this.msg.payload.dg;\n            if (this.treffen_im_durchgang.length !== 0 ) {\n                if  (confirm(\"Achtung! In diesem Durchgang wurden bereits Ergenisse erfasst. Möchtest du diese bearbeiten?\", \"Änderungen durchführen?\") == false) {\n                    this.btnspeichernsichtbar=false;\n                };\n            }\n          }\n        }\n        \n      }\n    },\n    methods: {\n      onClick: function (item) {\n        const payload = {};\n        if (item !== undefined ) {\n          payload.action = item;\n          if (item==\"erfassung\") {\n            if (!this.erfassung_laeuft) {\n              this.erfassung_laeuft=true;\n              this.buttoncolor=\"red\";\n              this.startbuttontext=\"Erfassung unterbrechen\";\n              payload.laeuft=true;\n              \n            } else {\n              this.erfassung_laeuft=false;\n              this.buttoncolor=\"green\";\n              this.startbuttontext=\"Erfassung beginnen\";\n              payload.laeuft=false;\n              this.erfassungsBlockSichtbar=false;\n              this.btnspeichernsichtbar=false;\n              this.ausgewaehlte_schuetzen_id=0;\n              this.treffen_im_durchgang=[];\n            }\n          } \n          this.send({ payload });\n        }\n      },\n      select: function (item,index) {\n        if (item !== undefined ) {\n          if (!this.erfassung_laeuft) {\n             if (this.schuetzen[index].delete_moeglich) {  \n              const payload = {};\n              payload.action = \"loeschen\";\n              payload.id=item;\n              payload.eventID=this.event.id;\n              this.send({ payload });\n            } else {\n              alert (\"Ein löschen ist nicht möglich, da schon Ergebnisse erfasst wurde. Bitte erst alle Werte auf 0 setzen\");\n            }\n            \n          } else {\n            this.ausgewaehlte_schuetzen_id = item;\n            this.btnspeichernsichtbar=false;\n            this.erfassungsBlockSichtbar=true;\n            this.dg_nr=0;\n            this.btnspeichernsichtbar=false;\n            this.treffen_im_durchgang=[];\n          }\n        }\n      },\n      getfarbe: function (item,index) {\n       if (item == this.ausgewaehlte_schuetzen_id) {\n          return 'red';\n        } \n        if (!this.schuetzen[index].delete_moeglich) {\n          return 'green';\n          }else {\n          return 'black';\n        }\n\n      },\n      getHaekchen: function (item,index) {\n        if (!this.schuetzen[index].delete_moeglich) {\n          return 'mdi-checkbox-marked-circle';\n        }\n      },\n      get_Btn_Duchgang_Color: function(item) {\n        if (item == this.dg_nr) {\n          return 'green';\n          }else {\n            return '#E1F5FE';\n          }\n      },\n      getChipColor: function (item) {\n      if (item !== undefined ) {\n      if (item == this.ausgewaehltesErgebniss) {\n      return 'yellow';\n      } else {\n      return 'green';\n      }\n      }\n      },\n      trefferwaehlen: function (event) {\n        this.ausgewaehltesErgebniss = event;\n      },\n      neuerwert: function (item) {\n        if (item !== undefined ) {\n          this.treffen_im_durchgang[this.ausgewaehltesErgebniss]=item;\n            if (this.ausgewaehltesErgebniss+1<parseInt(this.event.anz_schuesse)) {\n               this.ausgewaehltesErgebniss++; \n            }else {\n              this.ausgewaehltesErgebniss = 0;\n            }\n          }\n      },\n      durchgangclick: function (item) {\n        //daten des Schuetzen vom Durchgang anfragen in Watch return erwarten\n            this.dg_nr=item;\n            this.btnspeichernsichtbar=true;\n            const payload = {};\n            payload.action = \"durchgangladen\";\n            payload.id=this.ausgewaehlte_schuetzen_id ;\n            payload.eventID=this.event.id;\n            payload.dg=item;\n            this.ausgewaehltesErgebniss = 0\n            this.send({ payload });\n      },\n      dg_speichern: function () {\n            this.btnspeichernsichtbar=false;\n            const payload = {};\n            payload.action = \"durchgangspeichern\";\n            payload.id=this.ausgewaehlte_schuetzen_id ;\n            payload.eventID=this.event.id;\n            payload.dg_nr=this.dg_nr;\n            payload.dg=this.treffen_im_durchgang;\n            this.send({ payload });\n            this.treffen_im_durchgang=[];\n            this.ausgewaehlte_schuetzen_id  =0;\n            this.dg_nr=0;\n            this.erfassungsBlockSichtbar=false;\n      }\n    }\n  }\n    </script>\n\n \n<style>\n  .ContainerTreffer {\n    height: 60px;\n  }\n  .TrefferChips{\n    width: 45px;\n    height: 45px;\n    margin: 2px;\n    justify-content: center;\n  }\n  .namenChips{\n    justify-content: center;\n  }\n  \n  .TrefferChips .v-chip__content {\n    color: black !important;\n    font-weight: bold;\n    font-size: x-large;\n    }\n  .zahlenblock {\n      font-weight: bold;\n      font-size: x-large;\n  }\n</style> ",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 520,
+        "x": 500,
         "y": 140,
         "wires": [
             [
@@ -2064,8 +2083,7 @@
             ],
             [
                 "acbbeb5636902bfa",
-                "d22b4eaccc59e9d6",
-                "5b75e8a3c0edbb42"
+                "d22b4eaccc59e9d6"
             ],
             [
                 "44d585952e55f535",
@@ -2223,7 +2241,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n  <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-checkbox color=\"green\" v-model=\"showMitgliedsNR\" label=\"Mitglieds NR\"></v-checkbox>\n  <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\" :sort-desc.sync=\"sortDesc\"\n    :headers=\"headers\" :items-per-page=\"itemsPerPage\" items-per-page-text=\"Mitglied pro Seite\"\n    :items-per-page-options=\"proseite\">\n\n    <template v-slot:item.edit=\"{ item }\">\n      <v-chip color=\"green\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'hinzufuegen')\">hinzufügen</v-btn>\n      </v-chip>\n    </template>\n  </v-data-table>\n</template>\n<script>\n    export default {\n    data () {\n      //const schuetzen = [{\"id\":57,\"Name\":\"Adam\",\"Vorname\":\"Dietrich\",\"mgnr\":10000,\"activ\":1}];\n      return {\n        showMitgliedsNR: false,\n        search: '',\n        sortBy: [{ key: 'Name', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:-1,\n        //schuetzen,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n      }\n    },\n    computed: {\n      headers() {\n        let headers = [\n          //{ text: 'MitgliedsNR', value: 'mgnr',title:'NR',sortable:true,},\n          { text: 'Name', value: 'Name',title:'Name',sortable:true},\n          { text: 'Vorname',value:'Vorname',title:'Vorname',sortable:true},\n         { text: 'edit',value:'edit'} ]\n        if (this.showMitgliedsNR) {\n          headers.unshift({ text: 'MitgliedsNR', value: 'mgnr',title:'NR',sortable:true})\n        }\n        \n        return headers\n      }\n    },\n    watch: {\n      // watch for message\n        msg: function() {\n          if (this.msg.payload != undefined) {\n            this.schuetzen=this.msg.payload;\n          }\n        },\n    },\n    methods: {\n      //hinzufuegen\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action=action\n          this.send({ payload });\n      }},\n\n    }\n  }\n</script>",
+        "format": "<template>\n  <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-row>\n      <v-col><v-checkbox color=\"green\" v-model=\"showMitgliedsNR\" label=\"Mitglieds NR\"></v-checkbox></v-col>\n      <v-col><v-checkbox color=\"green\" v-model=\"showVerein\" label=\"Vereinskürzel\"></v-checkbox></v-col>\n    </v-row>\n  <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\" :sort-desc.sync=\"sortDesc\"\n    :headers=\"headers\" :items-per-page=\"itemsPerPage\" items-per-page-text=\"Mitglied pro Seite\"\n    :items-per-page-options=\"proseite\">\n\n    <template v-slot:item.edit=\"{ item }\">\n      <v-chip color=\"green\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'hinzufuegen')\">hinzufügen</v-btn>\n      </v-chip>\n    </template>\n  </v-data-table>\n</template>\n<script>\n    export default {\n    data () {\n      //const schuetzen = [{\"id\":57,\"Name\":\"Adam\",\"Vorname\":\"Dietrich\",\"mgnr\":10000,\"activ\":1}];\n      return {\n        showMitgliedsNR: false,\n        showVerein: false,\n        search: '',\n        sortBy: [{ key: 'Name', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:-1,\n        //schuetzen,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n      }\n    },\n    computed: {\n      headers() {\n        let headers = [\n          { text: 'Name', value: 'Name',title:'Name',sortable:true},\n          { text: 'Vorname',value:'Vorname',title:'Vorname',sortable:true},\n          { text: 'edit',value:'edit'} ]\n        if (this.showVerein) {\n        headers.unshift({ text: 'Verein', value: 'verein',title:'VR',sortable:true})\n        }\n        if (this.showMitgliedsNR) {\n          headers.unshift({ text: 'MitgliedsNR', value: 'mgnr',title:'NR',sortable:true})\n        }\n        \n        return headers\n      }\n    },\n    watch: {\n      // watch for message\n        msg: function() {\n          if (this.msg.payload != undefined) {\n            this.schuetzen=this.msg.payload;\n          }\n        },\n    },\n    methods: {\n      //hinzufuegen\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action=action\n          this.send({ payload });\n      }},\n\n    }\n  }\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -2314,7 +2332,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
+        "x": 520,
         "y": 80,
         "wires": [
             [
@@ -2555,7 +2573,8 @@
         "y": 180,
         "wires": [
             [
-                "5d208c688e7b2d7c"
+                "5d208c688e7b2d7c",
+                "5b75e8a3c0edbb42"
             ]
         ]
     },
@@ -2727,12 +2746,12 @@
         "id": "5cd9ab64949f423f",
         "type": "template",
         "z": "8541444b36ac495a",
-        "name": "Select Wettkampf",
+        "name": "Select Ergebnisse",
         "field": "topic",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SELECT mitglieder.Name, mitglieder.Vorname as vorname,DG1,DG2,DG3,DG4\n\t\tFROM ergebnisse  JOIN mitglieder ON ergebnisse.M_ID=mitglieder.ID WHERE ergebnisse.E_ID={{flow.eventID}} ORDER BY mitglieder.ID",
+        "template": "SELECT mitglieder.verein,mitglieder.Name, mitglieder.Vorname as vorname,DG1,DG2,DG3,DG4\n\t\tFROM ergebnisse  JOIN mitglieder ON ergebnisse.M_ID=mitglieder.ID WHERE ergebnisse.E_ID={{flow.eventID}} ORDER BY mitglieder.ID",
         "output": "str",
         "x": 450,
         "y": 220,
@@ -2747,7 +2766,7 @@
         "type": "function",
         "z": "8541444b36ac495a",
         "name": "Summe hinzufügen",
-        "func": "const ergebnissliste = [];\n\n\ndelete msg.topic;\n\n//geht die komplette SQL Antwort durch\nfor (var i in msg.payload) {\n    const durchgaenge = [];\n    var DG1 = [];\n    var DG2 = [];\n    var DG3 = [];\n    var DG4 = [];\n    var summe = 0;\n    var dg_summe =0;\n    var dg_summen = [];\n    \n    if (msg.payload[i].DG1) {\n        DG1 = msg.payload[i].DG1.split(',');\n        dg_summe = summe_der_elemente(DG1);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG1);\n        dg_summen.push(dg_summe);\n    }\n    if (msg.payload[i].DG2) {\n        DG2 = msg.payload[i].DG2.split(',');\n        dg_summe = summe_der_elemente(DG2);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG2);\n        dg_summen.push(dg_summe);\n    } \n    if (msg.payload[i].DG3) {\n        DG3 = msg.payload[i].DG3.split(',');\n        dg_summe = summe_der_elemente(DG3);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG3);\n        dg_summen.push(dg_summe);\n    }\n    if (msg.payload[i].DG4) {\n        DG4 = msg.payload[i].DG4.split(',');\n        dg_summe = summe_der_elemente(DG4);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG4);\n        dg_summen.push(dg_summe);\n    }\n   \n    const neueDaten = {\n        name: msg.payload[i].Name,\n        vorname: msg.payload[i].vorname,\n        treffer: durchgaenge,\n        summen:dg_summen,\n        summe: summe\n    }\n  \n   ergebnissliste.push(neueDaten);\n    \n}\nmsg.payload = ergebnissliste;\nmsg.topic=flow.get(\"EventInfo\");\n\nreturn msg;\n\nfunction summe_der_elemente (liste_von_Treffern  ) {\n    var summe = 0;\n    for (var j in liste_von_Treffern) {\n        if (parseInt(liste_von_Treffern[j])) {\n            summe = summe + parseInt(liste_von_Treffern[j]);\n        }\n    }\n    return summe;\n}",
+        "func": "const ergebnissliste = [];\n\n\ndelete msg.topic;\n\n//geht die komplette SQL Antwort durch\nfor (var i in msg.payload) {\n    const durchgaenge = [];\n    var DG1 = [];\n    var DG2 = [];\n    var DG3 = [];\n    var DG4 = [];\n    var summe = 0;\n    var dg_summe =0;\n    var dg_summen = [];\n    \n    if (msg.payload[i].DG1) {\n        DG1 = msg.payload[i].DG1.split(',');\n        dg_summe = summe_der_elemente(DG1);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG1);\n        dg_summen.push(dg_summe);\n    }\n    if (msg.payload[i].DG2) {\n        DG2 = msg.payload[i].DG2.split(',');\n        dg_summe = summe_der_elemente(DG2);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG2);\n        dg_summen.push(dg_summe);\n    } \n    if (msg.payload[i].DG3) {\n        DG3 = msg.payload[i].DG3.split(',');\n        dg_summe = summe_der_elemente(DG3);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG3);\n        dg_summen.push(dg_summe);\n    }\n    if (msg.payload[i].DG4) {\n        DG4 = msg.payload[i].DG4.split(',');\n        dg_summe = summe_der_elemente(DG4);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG4);\n        dg_summen.push(dg_summe);\n    }\n   \n    const neueDaten = {\n        verein: msg.payload[i].verein,\n        name: msg.payload[i].Name,\n        vorname: msg.payload[i].vorname,\n        treffer: durchgaenge,\n        summen:dg_summen,\n        summe: summe\n    }\n  \n   ergebnissliste.push(neueDaten);\n    \n}\nmsg.payload = ergebnissliste;\nmsg.topic=flow.get(\"EventInfo\");\n\nreturn msg;\n\nfunction summe_der_elemente (liste_von_Treffern  ) {\n    var summe = 0;\n    for (var j in liste_von_Treffern) {\n        if (parseInt(liste_von_Treffern[j])) {\n            summe = summe + parseInt(liste_von_Treffern[j]);\n        }\n    }\n    return summe;\n}",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2774,7 +2793,7 @@
         "width": "0",
         "height": "0",
         "head": "",
-        "format": "<template>\n  <v-row class=\"notPrint\" >\n  <v-col cols=\"auto\" class=\"ma-2 pa-2\">  \n    <v-btn color=\"black\"  @click=\"onClick('eventwechseln')\">Event wechseln</v-btn>\n  </v-col> \n  \n    <v-col cols=\"auto\" class=\"ma-2 pa-2\">\n      <v-card :subtitle=\"msg?.topic.datum +'  ' + msg?.topic.waffe + ' mit ' + msg?.topic.anz_schuesse + ' Schüssen und ' + msg?.topic.durchgaenge + ' Durchgängen'\"\n         :title=\"msg?.topic.event\">\n      </v-card>\n    </v-col>\n  </v-row>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field class=\"notPrint\"  v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :headers=\"headers\" items-per-page-text=\"Schützen pro Seite\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\">\n    <template v-slot:item.nr=\"{ item,index }\">\n      {{index+1}}\n    </template>  \n    <template v-slot:item.treffer=\"{ item }\">\n       \n      <template v-for=\"(x,index) in item.treffer\" :key=\"index\" class=\"ma-0 pa-0\">\n      \n        <v-row align=\"center\" class=\"ma-0 pa-0\">\n          \n          <v-col class=\"ma-0 pa-0\">\n            <template v-for=\"y in x\">\n              <v-chip class=\"chipsize\" color=\"orange\">{{y}}</v-chip>\n            </template>\n          </v-col>\n          <v-col cols=\"1\" class=\"ma-0 pa-0\"> \n            <v-chip class=\"chipsize\" color=\"green\">{{item.summen[index]}}</v-chip>\n          </v-col>  \n        </v-row> \n\n      </template>\n        \n   \n    </template>\n\n    \n    </v-data-table>\n     <v-btn class=\"notPrint\" color=\"black\"  @click=\"toPDF('topdf')\" >PDF</v-btn>\n</template>\n<script>\n    export default {\n    data () {\n      return {\n        headers: [\n        { text: 'Nr.', value: 'nr',title:'Nr' },\n        { text: 'Name', value: 'name',title:'Name',sortable:true },\n        { text: 'Vorname', value: 'vorname',title:'Vorname',sortable:true},\n        { text: 'Treffer',value:'treffer',title:'Treffer',align: 'center'},\n        { text: 'Summe',value:'summe',title:'Ergebnis',align: 'center',sortable:true}],\n        search: '',\n        sortBy: [{ key: 'summe', order:'desc'}],\n        sortDesc: false,\n      }\n    },\n    \n    \n    methods: {\n        // add a function to determine the color of the progress bar given the row's item\n    \n      onClick: function (item) {\n        if (item !== undefined ) {\n          const payload = {};\n          payload.action = item;\n          this.send({ payload });\n        }\n      },\n      toPDF: function (item) {\n         const payload = {};\n          let all = document.body.innerHTML;\n         //let all = document.getElementsByTagName('html')[0].innerHTML;\n          payload.html = all;\n          payload.action= item;\n          window.print();\n          this.send({ payload });\n      }\n    }\n  }\n</script>\n\n<style>\n  .chipsize{\n  width:35px;\n  justify-content: center;\n  }\n.v-chip__content {\ncolor: black !important;\nfont-weight: bold;\n}\n  // define any styles here - supports raw CSS\n  .v-field__field {\n    padding: 0 0px 0 6px !important;\n    height: 35px !important;\n    min-height: 35px !important;\n  }\n\n  .v-field__input {\n    padding: 0 0px 0 6px !important;\n    height: 35px !important;\n    min-height: 35px !important;\n  }\n\n  .v-data-table {\n    width: 1755px;\n  }\n\n  .v-data-table-column--no-padding {\n    padding: 0 0px 0 6px !important;\n  }\n\n  .v-data-table-column--align-start {\n    padding: 0 0px 0 6px !important;\n  }\n\n  .v-data-table-header__content {\n    color: black;\n    font-weight: bold;\n    height: 40px;\n    min-height: 40px;\n  }\n\n  .v-data-table-header__content:hover {\n    color: black;\n    font-weight: bold;\n  }\n\n  .v-data-table__th {\n    background-color: #B3C1C6;\n    white-space: nowrap;\n  }\n\n  .v-data-table .v-data-table__td {\n    white-space: nowrap;\n    height: 40px !important;\n    min-height: 40px !important;\n  }\n\n  .v-table__wrapper tr:nth-child(even) {\n    background-color: #f2f2f2;\n  }\n\n  .v-table__wrapper tr:hover {\n    background-color: #ddd;\n    color: black;\n  }\n\n  .v-data-table-footer {\n    background-color: #B3C1C6;\n    padding: 0 0px 0 0px !important;\n    color: black;\n    height: 48px !important;\n    min-height: 35px !important;\n    \n  }\n\n  .v-data-table-footer .v-input__control {\n    height: 35px !important;\n    min-height: 20px !important;\n    padding: 0 0px 0 0px !important;\n  }\n\n\n@media print {\n \n  .v-table__wrapper tr:nth-child(even) {\n  -webkit-print-color-adjust: exact;\n  print-color-adjust: exact;\n  background-color: black\n  color: #eee;\n  }\n\n  body {\n    margin: 0;\n    color: #333;\n    background-color: #fff;\n  }\n  .notPrint .v-toolbar__content {\n    display: none;\n  }\n\n}\n@page {\n  size: A4;\n  margin: 0;\n  margin-left:1.5cm;\n}\n  </style>\n",
+        "format": "<template>\n  <!-- Hier steht der Kopf Eventwechsel, ausgewähltes Event und die Checkbox ob Verein angzeigt wird  -->\n  <v-row id=\"Kopf\">\n  <v-col class=\"notPrint\" cols=\"auto\" class=\"ma-2 pa-2\" >  \n    <v-btn color=\"black\"  @click=\"onClick('eventwechseln')\">Event wechseln</v-btn>\n  </v-col> \n  \n    <v-col cols=\"auto\" class=\"ma-2 pa-2\">\n      <v-card :subtitle=\"msg?.topic.datum +'  ' + msg?.topic.waffe + ' mit ' + msg?.topic.anz_schuesse + ' Schüssen und ' + msg?.topic.durchgaenge + ' Durchgängen'\"\n         :title=\"msg?.topic.event\">\n      \n      </v-card>\n        \n    </v-col>\n    <v-col class=\"notPrint\"><v-checkbox color=\"green\" v-model=\"showVerein\" label=\"Vereinskürzel\"></v-checkbox>\n    </v-col>  \n  </v-row>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field class=\"notPrint\"  v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :headers=\"headers\" items-per-page-text=\"Schützen pro Seite\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\">\n    <template v-slot:item.nr=\"{ item,index }\">\n      {{index+1}}\n    </template>  \n    <template v-slot:item.treffer=\"{ item }\">\n       \n      <template v-for=\"(x,index) in item.treffer\" :key=\"index\" class=\"ma-0 pa-0\">\n      \n        <v-row align=\"center\" class=\"ma-0 pa-0\">\n          \n          <v-col class=\"ma-0 pa-0\">\n            <template v-for=\"y in x\">\n              <v-chip class=\"chipsize\" color=\"orange\">{{y}}</v-chip>\n            </template>\n          </v-col>\n          <v-col cols=\"1\" class=\"ma-0 pa-0\"> \n            <v-chip class=\"chipsize\" color=\"green\">{{item.summen[index]}}</v-chip>\n          </v-col>  \n        </v-row> \n\n      </template>\n        \n   \n    </template>\n    </v-data-table>\n    <v-row no-gutters class=\"notPrint\" >\n      <v-col cols=\"12\" class=\"ma-2 pa-2\">\n        <v-btn color=\"black\"  @click=\"toPDF('topdf')\" >PDF</v-btn>\n      </v-col>\n    </v-row>\n</template>\n<script>\n    export default {\n    data () {\n      return {\n        showVerein: false,\n        search: '',\n        sortBy: [{ key: 'summe', order:'desc'}],\n        sortDesc: false,\n      }\n    },\n    computed: {\n      headers () {\n        let headers = [\n          { text: 'Name', value: 'name',title:'Name',sortable:true },\n          { text: 'Vorname', value: 'vorname',title:'Vorname',sortable:true},\n          { text: 'Treffer',value:'treffer',title:'Treffer',align: 'center'},\n          { text: 'Summe',value:'summe',title:'Ergebnis',align: 'center',sortable:true}];\n        if (this.showVerein) {\n          headers.unshift({ text: 'Vereinskürzel', value: 'verein',title:'VR',sortable:true})\n        }\n        headers.unshift({ text: 'Nr.', value: 'nr',title:'Pos' })\n        return headers\n      }\n    },\n        \n    methods: {\n        // add a function to determine the color of the progress bar given the row's item\n    \n      onClick: function (item) {\n        if (item !== undefined ) {\n          const payload = {};\n          payload.action = item;\n          this.send({ payload });\n        }\n      },\n      toPDF: function (item) {\n         const payload = {};\n          let all = document.body.innerHTML;\n         //let all = document.getElementsByTagName('html')[0].innerHTML;\n          payload.html = all;\n          payload.action= item;\n          window.print();\n          this.send({ payload });\n      }\n    }\n  }\n</script>\n\n<style>\n  .chipsize{\n  width:35px;\n  justify-content: center;\n  }\n.v-chip__content {\ncolor: black !important;\nfont-weight: bold;\n}\n  // define any styles here - supports raw CSS\n  .v-field__field {\n    padding: 0 0px 0 6px !important;\n    height: 35px !important;\n    min-height: 35px !important;\n  }\n\n  .v-field__input {\n    padding: 0 0px 0 6px !important;\n    height: 35px !important;\n    min-height: 35px !important;\n  }\n\n  .v-data-table {\n    width: 1755px;\n  }\n\n  .v-data-table-column--no-padding {\n    padding: 0 0px 0 6px !important;\n  }\n\n  .v-data-table-column--align-start {\n    padding: 0 0px 0 6px !important;\n  }\n\n  .v-data-table-header__content {\n    color: black;\n    font-weight: bold;\n    height: 40px;\n    min-height: 40px;\n  }\n\n  .v-data-table-header__content:hover {\n    color: black;\n    font-weight: bold;\n  }\n\n  .v-data-table__th {\n    background-color: #B3C1C6;\n    white-space: nowrap;\n  }\n\n  .v-data-table .v-data-table__td {\n    white-space: nowrap;\n    height: 40px !important;\n    min-height: 40px !important;\n  }\n\n  .v-table__wrapper tr:nth-child(even) {\n    background-color: #f2f2f2;\n  }\n\n  .v-table__wrapper tr:hover {\n    background-color: #ddd;\n    color: black;\n  }\n\n  .v-data-table-footer {\n    background-color: #B3C1C6;\n    padding: 0 0px 0 0px !important;\n    color: black;\n    height: 48px !important;\n    min-height: 35px !important;\n    \n  }\n\n  .v-data-table-footer .v-input__control {\n    height: 35px !important;\n    min-height: 20px !important;\n    padding: 0 0px 0 0px !important;\n  }\n\n\n@media print {\n \n  .v-table__wrapper tr:nth-child(even) {\n  -webkit-print-color-adjust: exact;\n  print-color-adjust: exact;\n  background-color: black\n  color: #eee;\n  }\n\n  body {\n    margin: 0;\n    color: #333;\n    background-color: #fff;\n  }\n  #Kopf {\n    position: absolute;\n    top: -120px;\n    left: 130px;\n    overflow: hidden;\n    margin: 0 !important;\n    padding: 0 !important;\n  }\n  .v-toolbar__content {\n      display: none;\n  }\n  .v-data-table-footer {\n      display: none;\n  }\n  .notPrint {\n    display: none;\n  }\n  \n\n}\n@page {\n  size: A4;\n  margin: 0;\n  margin-left:1.5cm;\n}\n  </style>\n",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -2830,11 +2849,12 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "db",
-        "x": 670,
+        "x": 650,
         "y": 220,
         "wires": [
             [
-                "2d29c020d8ec75f4"
+                "2d29c020d8ec75f4",
+                "044be183d2f4bb83"
             ]
         ]
     },
@@ -2850,7 +2870,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\" :headers=\"headers\"  :items-per-page=\"itemsPerPage\"  items-per-page-text=\"Event pro Seite\" :items-per-page-options=\"proseite\">\n       \n      <template v-slot:item.edit=\"{ item }\">\n            <v-chip color=\"yellow\" color=\"primary\" variant=\"flat\">\n              <v-btn variant=\"plain\" @click=\" onClick(item,'eventliste')\">{{getButtonText(item)}}</v-btn>\n            </v-chip>\n        </template>\n    </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'datum', value: 'datum',title:'Datum',sortable:true },\n          { text: 'event', value: 'event',title:'Event',sortable:true},\n          { text: 'waffe',value:'waffe',title:'Waffe',sortable:true},\n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'datum', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n\n      }\n    },methods: {\n    onClick: function (item,action) {\n    if (item !== undefined ) {\n    const payload = item;\n    payload.action = action;\n    this.send({ payload });\n    }},\n    \n    getButtonText: function (item) {\n    if (item !== undefined ) {\n    if (item.activ == 0) {\n    return 'asf';\n    } else {\n    return 'auswählen';\n    }\n    }\n    },\n    getChipColor: function (item) {\n    if (item !== undefined ) {\n    if (item.activ == 0) {\n    return 'blue';\n    } else {\n    return 'green';\n    }\n    }\n    }\n    }\n    }\n    </script>\n    <!--\n    <style>\n      .v-btn {\n      width: 56px;\n      min-width: 26px;\n      }\n      </style>  -->",
+        "format": "<template>\n  <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\" hide-details> </v-text-field>\n  <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" \n                :sort-by.sync=\"sortBy\" :sort-desc.sync=\"sortDesc\"\n                :headers=\"headers\" :items-per-page=\"itemsPerPage\" \n                items-per-page-text=\"Event pro Seite\"\n              :items-per-page-options=\"proseite\">\n    <template v-slot:item.edit=\"{ item }\">\n      <v-chip color=\"yellow\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'eventliste')\">auswählen</v-btn>\n      </v-chip>\n    </template>\n  </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'datum', value: 'datum',title:'Datum',sortable:true },\n          { text: 'event', value: 'event',title:'Event',sortable:true},\n          { text: 'waffe',value:'waffe',title:'Waffe',sortable:true},\n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'datum', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n\n      }\n    },methods: {\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action = action;\n          this.send({ payload });\n        }\n      },\n    }\n  }\n</script>\n",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -3436,7 +3456,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "CREATE TABLE IF NOT EXISTS mitglieder \n                (id INTEGER PRIMARY KEY, \n                 Name TEXT, \n                 Vorname TEXT,  \n                 mgnr INTEGER,\n                 activ INTEGER DEFAULT (1),\n                 geloescht INTEGER DEFAULT (0))",
+        "template": "CREATE TABLE IF NOT EXISTS mitglieder \n                (id INTEGER PRIMARY KEY, \n                 Name TEXT, \n                 Vorname TEXT,  \n                 mgnr INTEGER,\n                 activ INTEGER DEFAULT (1),\n                 verein TEXT DEFAULT 'Gerzn',\n                 geloescht INTEGER DEFAULT (0))",
         "output": "str",
         "x": 410,
         "y": 140,
