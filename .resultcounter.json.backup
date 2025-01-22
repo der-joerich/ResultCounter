@@ -1,0 +1,3629 @@
+[
+    {
+        "id": "2a175dcb59821ade",
+        "type": "tab",
+        "label": "Stammdaten",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "831b2fedf9359f4d",
+        "type": "tab",
+        "label": "Events",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b4599c1f41a6367f",
+        "type": "tab",
+        "label": "Erfassung",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8541444b36ac495a",
+        "type": "tab",
+        "label": "Anzeige",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "826fee82f1459e6d",
+        "type": "tab",
+        "label": "DB-Verwaltung",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6874bb3442e9fd04",
+        "type": "tab",
+        "label": "Zusatz",
+        "disabled": false,
+        "info": "Hier wird das Action Menü oben\nrechts eingeblendet\n",
+        "env": []
+    },
+    {
+        "id": "36510f613a3fc5f9",
+        "type": "group",
+        "z": "826fee82f1459e6d",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "eb165ae674790a5c",
+            "938d3f0492025256",
+            "f514244f3f459025",
+            "ea8a2fbbb2aa5dde",
+            "e4a8aafc721b01a7",
+            "5656375c9af40db2",
+            "5a7e51956eb74e56",
+            "fb9c2d4edf736c73",
+            "3d0209851edaf706",
+            "7b33da4e04bab4fe",
+            "59e067dfd128395b",
+            "e524e498b838bbc0"
+        ],
+        "x": 74,
+        "y": 59,
+        "w": 652,
+        "h": 502
+    },
+    {
+        "id": "c422645b457867f7",
+        "type": "sqlitedb",
+        "db": "./DB/sqlite.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "1739e78f07e241af",
+        "type": "ui-base",
+        "name": "Dash",
+        "path": "/dashboard",
+        "appIcon": "/img/SV-Logo256.png",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-form",
+            "ui-text-input",
+            "ui-number-input",
+            "ui-file-input",
+            "ui-button",
+            "ui-button-group",
+            "ui-dropdown",
+            "ui-radio-group",
+            "ui-slider",
+            "ui-table",
+            "ui-template",
+            "ui-text",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": false,
+        "navigationStyle": "default",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "7142d708899cb86b",
+        "type": "ui-group",
+        "name": "Erfassung",
+        "page": "55e5f76623e1c19d",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "9407542b3b53542b",
+        "type": "ui-group",
+        "name": "Mitgliederliste",
+        "page": "55e5f76623e1c19d",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "56079ec0ed49582a",
+        "type": "ui-group",
+        "name": "Eventliste",
+        "page": "8768af462ad343a0",
+        "width": "10",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b77de3d434654ecd",
+        "type": "ui-group",
+        "name": "Ergebnisliste",
+        "page": "8768af462ad343a0",
+        "width": "7",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ea85f51ae10a5ea3",
+        "type": "ui-theme",
+        "name": "Standard",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "580b0545da1d429d",
+        "type": "ui-page",
+        "name": "Stammdaten",
+        "ui": "1739e78f07e241af",
+        "path": "/stammdaten",
+        "icon": "account-cog",
+        "layout": "flex",
+        "theme": "ea85f51ae10a5ea3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "789cd736ae06d6f7",
+        "type": "ui-group",
+        "name": "Mitgliederverwaltung",
+        "page": "580b0545da1d429d",
+        "width": "11",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "2b2ff660b527d423",
+        "type": "ui-page",
+        "name": "Events",
+        "ui": "1739e78f07e241af",
+        "path": "/events",
+        "icon": "calendar-month",
+        "layout": "grid",
+        "theme": "ea85f51ae10a5ea3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "2ec8461e5b0d2647",
+        "type": "ui-group",
+        "name": "Event bearbeiten",
+        "page": "2b2ff660b527d423",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "55e5f76623e1c19d",
+        "type": "ui-page",
+        "name": "Erfassung",
+        "ui": "1739e78f07e241af",
+        "path": "/erfassung",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "ea85f51ae10a5ea3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "d10938ea3fb37908",
+        "type": "ui-group",
+        "name": "Eventauswahl",
+        "page": "55e5f76623e1c19d",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "8768af462ad343a0",
+        "type": "ui-page",
+        "name": "Ergebnise",
+        "ui": "1739e78f07e241af",
+        "path": "/ergebnise",
+        "icon": "monitor-dashboard",
+        "layout": "notebook",
+        "theme": "ea85f51ae10a5ea3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "92d04e6f69df6fe2",
+        "type": "change",
+        "z": "2a175dcb59821ade",
+        "name": "Init Variablen",
+        "rules": [
+            {
+                "t": "set",
+                "p": "admins",
+                "pt": "global",
+                "to": "[\"joerich\"]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "_client.user",
+                "pt": "msg",
+                "to": "joerich",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "app",
+                "pt": "global",
+                "to": "{\"name\":\"ResultCouter\",\"version\":\"1.1.0\",\"beschreibung\":\"Eine Ergebniserfassung geschrieben für den Schützenverein Göritzhain 1992 e.V\",\"Entwickler\":\"JOErICH\",\"Kontakt\":\"support@joerich.de\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "416b944e178da39c"
+            ]
+        ]
+    },
+    {
+        "id": "8cda1f4c72687640",
+        "type": "inject",
+        "z": "2a175dcb59821ade",
+        "name": "initialisierung",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "92d04e6f69df6fe2"
+            ]
+        ]
+    },
+    {
+        "id": "416b944e178da39c",
+        "type": "function",
+        "z": "2a175dcb59821ade",
+        "name": "Select",
+        "func": "msg.topic = \"SELECT * FROM mitglieder WHERE geloescht=0\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 100,
+        "wires": [
+            [
+                "504278443029b414"
+            ]
+        ]
+    },
+    {
+        "id": "95b9cdeba99f48bf",
+        "type": "debug",
+        "z": "2a175dcb59821ade",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "504278443029b414",
+        "type": "sqlite",
+        "z": "2a175dcb59821ade",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 870,
+        "y": 100,
+        "wires": [
+            [
+                "60f2d0e92bf28030"
+            ]
+        ]
+    },
+    {
+        "id": "60f2d0e92bf28030",
+        "type": "ui-template",
+        "z": "2a175dcb59821ade",
+        "group": "789cd736ae06d6f7",
+        "page": "",
+        "ui": "",
+        "name": "Mitgliederliste",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\" :headers=\"headers\"  :items-per-page=\"itemsPerPage\"  items-per-page-text=\"Mitglieder pro Seite\" :items-per-page-options=\"proseite\">\n       \n    <template v-slot:item.edit=\"{ item }\">\n    \n      <v-chip class=\"chipsize2\" color=\"yellow\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'aendern')\">ändern</v-btn> \n      </v-chip>\n      <v-chip class=\"chipsize2\" :color=\"getChipColor(item)\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'activ')\">{{getButtonText(item)}}</v-btn>\n      </v-chip>\n      <v-chip class=\"chipsize\" color=\"red\">\n        <v-btn :ripple=\"true\" variant=\"plain\" @click=\"onClick(item,'loeschen')\">-</v-btn>\n      </v-chip>\n    </template>\n\n    \n    </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'MitgliedsNR', value: 'mgnr',title:'NR',sortable:true },\n          { text: 'Name', value: 'Name',title:'Name',sortable:true},\n          { text: 'Vorname',value:'Vorname',title:'Vorname',sortable:true},\n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'mgnr', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n        \n        \n      }\n    },\n    methods: {\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action = action;\n          this.send({ payload });\n      }},\n     \n  \n      evIcon: function (item) {\n        if (item !== undefined ) {\n          if (item.ev == \"yes\") {\n            return 'mdi-car-electric';\n          } else {\n            return 'mdi-car';\n          }\n        }\n      },\n      getButtonText: function (item) {\n        if (item !== undefined ) {\n        if (item.activ == 0) {\n        return 'inactiv';\n        } else {\n        return 'activ';\n        }\n        }\n      },\n      getChipColor: function (item) {\n        if (item !== undefined ) {\n          if (item.activ == 0) {\n            return 'blue';\n            } else {\n               return 'green';\n          }\n        }\n      }\n    }\n  }\n</script>\n<style>\n  .chipsize {\n    width: 35px;\n    justify-content: center;\n  }\n  .chipsize2 {\n  width: 80px;\n  justify-content: center;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 160,
+        "y": 40,
+        "wires": [
+            [
+                "e93a0b7c077dceb7"
+            ]
+        ]
+    },
+    {
+        "id": "758e8a745419e980",
+        "type": "ui-form",
+        "z": "2a175dcb59821ade",
+        "name": "Mitglieder bearbeiten",
+        "group": "789cd736ae06d6f7",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Vorname",
+                "key": "Vorname",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Name",
+                "key": "Name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Mitgliedsnummer",
+                "key": "mgnr",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Vereinskürzel",
+                "key": "verein",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Vorname": "",
+            "Name": "",
+            "mgnr": "",
+            "verein": ""
+        },
+        "payload": "",
+        "submit": "Speichern",
+        "cancel": "Abbrechen",
+        "resetOnSubmit": true,
+        "topic": "payload",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "dropdownOptions": [],
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "63ec47cf7be20ab8"
+            ]
+        ]
+    },
+    {
+        "id": "39fdebdf1b3cf6d3",
+        "type": "switch",
+        "z": "2a175dcb59821ade",
+        "name": "Ändern/Status/Löschen",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "aendern",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "activ",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "loeschen",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "a1f43717573c3644"
+            ],
+            [
+                "55fd43ea27e0bdf6"
+            ],
+            [
+                "420b515b108e9402"
+            ]
+        ]
+    },
+    {
+        "id": "24eab8eee4dadada",
+        "type": "template",
+        "z": "2a175dcb59821ade",
+        "name": "update",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "UPDATE mitglieder SET Name = '{{payload.Name}}', Vorname= '{{payload.Vorname}}', mgnr= '{{payload.mgnr}}', verein='{{payload.verein}}'  WHERE id = '{{flow.aendern_ID}}'",
+        "output": "str",
+        "x": 650,
+        "y": 260,
+        "wires": [
+            [
+                "45e46c1346caf1db"
+            ]
+        ]
+    },
+    {
+        "id": "45e46c1346caf1db",
+        "type": "sqlite",
+        "z": "2a175dcb59821ade",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 850,
+        "y": 240,
+        "wires": [
+            [
+                "9322d3438a72b92b"
+            ]
+        ]
+    },
+    {
+        "id": "0449f1ad3620d2f4",
+        "type": "template",
+        "z": "2a175dcb59821ade",
+        "name": "insert",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO mitglieder (Name,Vorname,mgnr)  VALUES ('{{payload.Name}}','{{payload.Vorname}}','{{payload.mgnr}}')",
+        "output": "str",
+        "x": 650,
+        "y": 220,
+        "wires": [
+            [
+                "45e46c1346caf1db"
+            ]
+        ]
+    },
+    {
+        "id": "58b4a30833db4927",
+        "type": "ui-notification",
+        "z": "2a175dcb59821ade",
+        "ui": "1739e78f07e241af",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#2ec27e",
+        "displayTime": "",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Nein",
+        "allowConfirm": true,
+        "confirmText": "Jup",
+        "raw": false,
+        "className": "",
+        "name": "Bestätigung",
+        "x": 350,
+        "y": 540,
+        "wires": [
+            [
+                "d7db1a2881c3493e"
+            ]
+        ]
+    },
+    {
+        "id": "725a9fc200c43974",
+        "type": "template",
+        "z": "2a175dcb59821ade",
+        "name": "Wirklich löschen?",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Möchtest du wirklich den Benutzer  {{payload.Name}},  {{payload.Vorname}} löschen? ",
+        "output": "str",
+        "x": 150,
+        "y": 540,
+        "wires": [
+            [
+                "58b4a30833db4927"
+            ]
+        ]
+    },
+    {
+        "id": "d7db1a2881c3493e",
+        "type": "switch",
+        "z": "2a175dcb59821ade",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "confirm_clicked",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 510,
+        "y": 540,
+        "wires": [
+            [
+                "c687aa3ae8cc4928"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "420b515b108e9402",
+        "type": "change",
+        "z": "2a175dcb59821ade",
+        "name": "ID-Merken",
+        "rules": [
+            {
+                "t": "set",
+                "p": "id",
+                "pt": "flow",
+                "to": "payload.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "725a9fc200c43974"
+            ]
+        ]
+    },
+    {
+        "id": "9322d3438a72b92b",
+        "type": "change",
+        "z": "2a175dcb59821ade",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "id",
+                "pt": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "payload.action",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "_client",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 160,
+        "wires": [
+            [
+                "416b944e178da39c",
+                "21a79fe92855e48b"
+            ]
+        ]
+    },
+    {
+        "id": "cc8d9e71171f921f",
+        "type": "template",
+        "z": "2a175dcb59821ade",
+        "name": "toggle Activ",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "UPDATE mitglieder SET activ = '{{payload.activ}}' WHERE id = '{{payload.id}}'",
+        "output": "str",
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "45e46c1346caf1db"
+            ]
+        ]
+    },
+    {
+        "id": "19a260fc9ae89405",
+        "type": "change",
+        "z": "2a175dcb59821ade",
+        "name": "zu 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.activ",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 300,
+        "wires": [
+            [
+                "cc8d9e71171f921f"
+            ]
+        ]
+    },
+    {
+        "id": "55fd43ea27e0bdf6",
+        "type": "switch",
+        "z": "2a175dcb59821ade",
+        "name": "",
+        "property": "payload.activ",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 390,
+        "y": 300,
+        "wires": [
+            [
+                "19a260fc9ae89405"
+            ],
+            [
+                "b2c071b82e7b4dd6"
+            ]
+        ]
+    },
+    {
+        "id": "b2c071b82e7b4dd6",
+        "type": "change",
+        "z": "2a175dcb59821ade",
+        "name": "zu 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.activ",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "cc8d9e71171f921f"
+            ]
+        ]
+    },
+    {
+        "id": "a1f43717573c3644",
+        "type": "change",
+        "z": "2a175dcb59821ade",
+        "name": "ActionSave",
+        "rules": [
+            {
+                "t": "set",
+                "p": "insert",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "aendern_ID",
+                "pt": "flow",
+                "to": "payload.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "758e8a745419e980"
+            ]
+        ]
+    },
+    {
+        "id": "e93a0b7c077dceb7",
+        "type": "change",
+        "z": "2a175dcb59821ade",
+        "name": "Setze Insert",
+        "rules": [
+            {
+                "t": "set",
+                "p": "insert",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "39fdebdf1b3cf6d3"
+            ]
+        ]
+    },
+    {
+        "id": "63ec47cf7be20ab8",
+        "type": "switch",
+        "z": "2a175dcb59821ade",
+        "name": "add or change",
+        "property": "insert",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 2,
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "0449f1ad3620d2f4"
+            ],
+            [
+                "24eab8eee4dadada"
+            ]
+        ]
+    },
+    {
+        "id": "21a79fe92855e48b",
+        "type": "link out",
+        "z": "2a175dcb59821ade",
+        "name": "link_akuelle-Mitgliederliste",
+        "mode": "link",
+        "links": [
+            "79d4cb5ea4270eeb"
+        ],
+        "x": 965,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c687aa3ae8cc4928",
+        "type": "template",
+        "z": "2a175dcb59821ade",
+        "name": "prüfen",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT ID FROM ergebnisse WHERE M_ID={{flow.id}}\n",
+        "output": "str",
+        "x": 390,
+        "y": 480,
+        "wires": [
+            [
+                "90ab52b000cda1a2"
+            ]
+        ],
+        "info": "Prüfen ob löschen möglich"
+    },
+    {
+        "id": "90ab52b000cda1a2",
+        "type": "sqlite",
+        "z": "2a175dcb59821ade",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "60cbf758f3a8129d"
+            ]
+        ]
+    },
+    {
+        "id": "60cbf758f3a8129d",
+        "type": "function",
+        "z": "2a175dcb59821ade",
+        "name": "können wir löschen?",
+        "func": "var x = msg.payload;\n\nif (x.length>0) {\n   msg.topic=\"UPDATE mitglieder SET geloescht = 1 WHERE id =\"+ flow.get(\"id\");\n   msg.payload=\"Benutzer wurde nur als gelöscht markiert, da es bereits Ergebnisse in Events erfasst wurden.\";  \n  return [msg, null]\n} else {\n  msg.topic=\"DELETE FROM mitglieder WHERE id =\"+ flow.get(\"id\");\n  return [null, msg]\n}\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "b538a7231feaafe3"
+            ],
+            [
+                "45e46c1346caf1db"
+            ]
+        ]
+    },
+    {
+        "id": "b538a7231feaafe3",
+        "type": "ui-notification",
+        "z": "2a175dcb59821ade",
+        "ui": "1739e78f07e241af",
+        "position": "center center",
+        "colorDefault": false,
+        "color": "#f66151",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": false,
+        "dismissText": "Nein",
+        "allowConfirm": false,
+        "confirmText": "Jup",
+        "raw": false,
+        "className": "",
+        "name": "Info nicht gelöscht",
+        "x": 630,
+        "y": 380,
+        "wires": [
+            [
+                "45e46c1346caf1db"
+            ]
+        ]
+    },
+    {
+        "id": "307b9a1386ac0cb1",
+        "type": "comment",
+        "z": "2a175dcb59821ade",
+        "name": "GLOBABLE Variable",
+        "info": "",
+        "x": 550,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "27035731e86e1e3d",
+        "type": "inject",
+        "z": "831b2fedf9359f4d",
+        "name": "initialisierung",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "90d41f4518dbb11b"
+            ]
+        ]
+    },
+    {
+        "id": "90d41f4518dbb11b",
+        "type": "function",
+        "z": "831b2fedf9359f4d",
+        "name": "Select",
+        "func": "msg.topic = \"SELECT * FROM events order by datum\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 60,
+        "wires": [
+            [
+                "ad7d027a75b505af"
+            ]
+        ]
+    },
+    {
+        "id": "ad7d027a75b505af",
+        "type": "sqlite",
+        "z": "831b2fedf9359f4d",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 570,
+        "y": 60,
+        "wires": [
+            [
+                "81ccfb74b04bcae6"
+            ]
+        ]
+    },
+    {
+        "id": "17260a901989e76d",
+        "type": "ui-form",
+        "z": "831b2fedf9359f4d",
+        "name": "Event bearbeiten",
+        "group": "2ec8461e5b0d2647",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Datum",
+                "key": "datum",
+                "type": "date",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Event Bezeichnung",
+                "key": "event",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Waffe",
+                "key": "waffe",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Schüsse pro Durchlauf",
+                "key": "anz_schuesse",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Durchgänge",
+                "key": "durchgaenge",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "datum": "",
+            "event": "",
+            "waffe": "",
+            "anz_schuesse": "",
+            "durchgaenge": ""
+        },
+        "payload": "",
+        "submit": "Speichern",
+        "cancel": "Abbrechen",
+        "resetOnSubmit": true,
+        "topic": "payload",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "dropdownOptions": [
+            {
+                "dropdown": "waffe",
+                "value": "Pistole",
+                "label": "Pistole kK"
+            },
+            {
+                "dropdown": "waffe",
+                "value": "Gewehr",
+                "label": "Gewehr"
+            },
+            {
+                "dropdown": "waffe",
+                "value": "Armbrust",
+                "label": "Armbrust"
+            },
+            {
+                "dropdown": "event",
+                "value": "Vereinschießen",
+                "label": "Vereinschießen"
+            },
+            {
+                "dropdown": "event",
+                "value": "Wettkampf",
+                "label": "Wettkampf"
+            },
+            {
+                "dropdown": "event",
+                "value": "Sonstige",
+                "label": "Sonstige"
+            },
+            {
+                "dropdown": "waffe",
+                "value": "Lasergewehr",
+                "label": "Lasergewehr"
+            },
+            {
+                "dropdown": "anz_schuesse",
+                "value": "4",
+                "label": "4 Schüsse"
+            },
+            {
+                "dropdown": "anz_schuesse",
+                "value": "8",
+                "label": "8 Schüsse"
+            },
+            {
+                "dropdown": "anz_schuesse",
+                "value": "10",
+                "label": "10 Schüsse"
+            },
+            {
+                "dropdown": "durchgaenge",
+                "value": "2",
+                "label": "2 Durchgänge"
+            },
+            {
+                "dropdown": "durchgaenge",
+                "value": "1",
+                "label": "1 Durchgang"
+            },
+            {
+                "dropdown": "durchgaenge",
+                "value": "3",
+                "label": "3 Durchgänge"
+            },
+            {
+                "dropdown": "durchgaenge",
+                "value": "4",
+                "label": "4 Durchgänge"
+            },
+            {
+                "dropdown": "waffe",
+                "value": "Pistole gK",
+                "label": "Pistole gK"
+            },
+            {
+                "dropdown": "event",
+                "value": "Vereinswettkampf",
+                "label": "Vereinswettkampf"
+            },
+            {
+                "dropdown": "event",
+                "value": "Sponsorenschiesen",
+                "label": "Sponsorenschießen"
+            },
+            {
+                "dropdown": "event",
+                "value": "Kinderschießen",
+                "label": "Kinderschießen"
+            },
+            {
+                "dropdown": "event",
+                "value": "Frauenschießen",
+                "label": "Frauenschießen"
+            }
+        ],
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "04e5fd885410cf72"
+            ]
+        ]
+    },
+    {
+        "id": "e074f8af9eed1829",
+        "type": "ui-template",
+        "z": "831b2fedf9359f4d",
+        "group": "2ec8461e5b0d2647",
+        "page": "",
+        "ui": "",
+        "name": "Eventliste",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\" :headers=\"headers\"  :items-per-page=\"itemsPerPage\"  items-per-page-text=\"Event pro Seite\" :items-per-page-options=\"proseite\">\n       \n    <template v-slot:item.edit=\"{ item }\">\n    \n      <v-chip color=\"yellow\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'aendern')\">ändern</v-btn> \n      </v-chip>\n      <v-chip class=\"chipsize\"  color=\"red\">\n        <v-btn :ripple=\"true\" variant=\"plain\" @click=\"onClick(item,'loeschen')\">-</v-btn>\n      </v-chip>\n    </template>\n\n    \n    </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'datum', value: 'datum',title:'Datum',sortable:true },\n          { text: 'event', value: 'event',title:'Event',sortable:true},\n          { text: 'waffe',value:'waffe',title:'Waffe',sortable:true},\n        \n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'datum', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n        \n        \n      }\n    },methods: {\n    onClick: function (item,action) {\n    if (item !== undefined ) {\n    const payload = item;\n    payload.action = action;\n    this.send({ payload });\n    }},\n    \n    getButtonText: function (item) {\n    if (item !== undefined ) {\n    if (item.activ == 0) {\n    return 'inactiv';\n    } else {\n    return 'activ';\n    }\n    }\n    },\n    getChipColor: function (item) {\n    if (item !== undefined ) {\n    if (item.activ == 0) {\n    return 'blue';\n    } else {\n    return 'green';\n    }\n    }\n    }\n    }\n    }\n    </script>\n<style>\n  .chipsize {\n    width: 35px;\n    justify-content: center;\n  }\n </style> ",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "180af596dd3c05b7"
+            ]
+        ]
+    },
+    {
+        "id": "9efbb6ac779b8a08",
+        "type": "debug",
+        "z": "831b2fedf9359f4d",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "180af596dd3c05b7",
+        "type": "switch",
+        "z": "831b2fedf9359f4d",
+        "name": "Ändern/Status/Löschen",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "aendern",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "loeschen",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "80ba27075007675d"
+            ],
+            [
+                "20d5dc22c2b9f6a1"
+            ]
+        ]
+    },
+    {
+        "id": "80ba27075007675d",
+        "type": "change",
+        "z": "831b2fedf9359f4d",
+        "name": "ActionSave",
+        "rules": [
+            {
+                "t": "set",
+                "p": "insert",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "aendern_ID",
+                "pt": "flow",
+                "to": "payload.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "17260a901989e76d"
+            ]
+        ]
+    },
+    {
+        "id": "1db63216cecf377e",
+        "type": "template",
+        "z": "831b2fedf9359f4d",
+        "name": "update",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "UPDATE events SET \n     datum = '{{payload.datum}}',\n     event = '{{payload.event}}', \n     waffe = '{{payload.waffe}}',\n     anz_schuesse = '{{payload.anz_schuesse}}',\n     durchgaenge = '{{payload.durchgaenge}}'\n\n        WHERE id = '{{flow.aendern_ID}}'",
+        "output": "str",
+        "x": 690,
+        "y": 280,
+        "wires": [
+            [
+                "98b798b6200329f1",
+                "9efbb6ac779b8a08"
+            ]
+        ]
+    },
+    {
+        "id": "244a8aebef79c5a8",
+        "type": "template",
+        "z": "831b2fedf9359f4d",
+        "name": "insert",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO events (datum,event,waffe,anz_schuesse,durchgaenge) \n    VALUES ('{{payload.datum}}',\n            '{{payload.event}}',\n            '{{payload.waffe}}',\n            '{{payload.anz_schuesse}}',\n            '{{payload.durchgaenge}}'\n           )",
+        "output": "str",
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "98b798b6200329f1",
+                "07dca3800fdf15f7"
+            ]
+        ]
+    },
+    {
+        "id": "81ccfb74b04bcae6",
+        "type": "change",
+        "z": "831b2fedf9359f4d",
+        "name": "Setze Insert",
+        "rules": [
+            {
+                "t": "set",
+                "p": "insert",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "e074f8af9eed1829"
+            ]
+        ]
+    },
+    {
+        "id": "98b798b6200329f1",
+        "type": "sqlite",
+        "z": "831b2fedf9359f4d",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 890,
+        "y": 260,
+        "wires": [
+            [
+                "09d3a9b19448b1f0"
+            ]
+        ]
+    },
+    {
+        "id": "04e5fd885410cf72",
+        "type": "switch",
+        "z": "831b2fedf9359f4d",
+        "name": "add or change",
+        "property": "insert",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 2,
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "244a8aebef79c5a8"
+            ],
+            [
+                "1db63216cecf377e"
+            ]
+        ]
+    },
+    {
+        "id": "09d3a9b19448b1f0",
+        "type": "change",
+        "z": "831b2fedf9359f4d",
+        "name": "reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "insert",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "delete",
+                "p": "aendern_ID",
+                "pt": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "loeschen_id",
+                "pt": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "_client",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 140,
+        "wires": [
+            [
+                "90d41f4518dbb11b",
+                "dd1b205c836ccb8b",
+                "618aede6146cca60"
+            ]
+        ]
+    },
+    {
+        "id": "2e357dca7f24f76d",
+        "type": "template",
+        "z": "831b2fedf9359f4d",
+        "name": "Wirklich löschen?",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Möchtest du wirklich das Event \n{{payload.event}}\nam\n\n {{payload.datum}} löschen? ",
+        "output": "str",
+        "x": 230,
+        "y": 480,
+        "wires": [
+            [
+                "80b4867fb0327aa3"
+            ]
+        ]
+    },
+    {
+        "id": "20d5dc22c2b9f6a1",
+        "type": "change",
+        "z": "831b2fedf9359f4d",
+        "name": "ID-Merken",
+        "rules": [
+            {
+                "t": "set",
+                "p": "loeschen_id",
+                "pt": "flow",
+                "to": "payload.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "2e357dca7f24f76d"
+            ]
+        ]
+    },
+    {
+        "id": "80b4867fb0327aa3",
+        "type": "ui-notification",
+        "z": "831b2fedf9359f4d",
+        "ui": "1739e78f07e241af",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#2ec27e",
+        "displayTime": "",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Nein",
+        "allowConfirm": true,
+        "confirmText": "Jup",
+        "raw": false,
+        "className": "",
+        "name": "Bestätigung",
+        "x": 430,
+        "y": 520,
+        "wires": [
+            [
+                "b2720421e0bf7147"
+            ]
+        ]
+    },
+    {
+        "id": "dd1b205c836ccb8b",
+        "type": "link out",
+        "z": "831b2fedf9359f4d",
+        "name": "link event aktuellisiert",
+        "mode": "link",
+        "links": [
+            "be069faf30fa45e4",
+            "d5fd0f9a7c54b8bc"
+        ],
+        "x": 935,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "50f48f5f058596c7",
+        "type": "ui-notification",
+        "z": "831b2fedf9359f4d",
+        "ui": "1739e78f07e241af",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": false,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "MSG",
+        "x": 1210,
+        "y": 240,
+        "wires": [
+            [
+                "09d3a9b19448b1f0"
+            ]
+        ]
+    },
+    {
+        "id": "07dca3800fdf15f7",
+        "type": "template",
+        "z": "831b2fedf9359f4d",
+        "name": "erstellen",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ein {{payload.event}} Event wurde angelegt!\n",
+        "output": "str",
+        "x": 980,
+        "y": 220,
+        "wires": [
+            [
+                "50f48f5f058596c7"
+            ]
+        ]
+    },
+    {
+        "id": "618aede6146cca60",
+        "type": "link out",
+        "z": "831b2fedf9359f4d",
+        "name": "veränderungEvents",
+        "mode": "link",
+        "links": [
+            "be069faf30fa45e4",
+            "45eabd12e3e314ce"
+        ],
+        "x": 935,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b2720421e0bf7147",
+        "type": "function",
+        "z": "831b2fedf9359f4d",
+        "name": "gibt es Inhalte",
+        "func": "if (msg.payload ==\"confirm_clicked\") {\n   msg.topic=\"SELECT ID FROM ergebnisse WHERE E_ID=\"+ flow.get(\"loeschen_id\");\n   return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 460,
+        "wires": [
+            [
+                "dd352c2883b0c895"
+            ]
+        ]
+    },
+    {
+        "id": "dd352c2883b0c895",
+        "type": "sqlite",
+        "z": "831b2fedf9359f4d",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 610,
+        "y": 460,
+        "wires": [
+            [
+                "9ec7645e891f753b"
+            ]
+        ]
+    },
+    {
+        "id": "9ec7645e891f753b",
+        "type": "function",
+        "z": "831b2fedf9359f4d",
+        "name": "können wir löschen?",
+        "func": "var x = msg.payload;\n\nif (x.length>0) {\n   msg.payload=\"Das Event kann nicht gelöscht werden, da bereits Ergebnisse erfasst wurden!\";  \n  return [msg, null]\n} else {\n  msg.topic=\"DELETE FROM events WHERE id =\" + flow.get(\"loeschen_id\");\n   return [null, msg]\n}\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 400,
+        "wires": [
+            [
+                "0c17cd8efe72bf44"
+            ],
+            [
+                "98b798b6200329f1"
+            ]
+        ]
+    },
+    {
+        "id": "0c17cd8efe72bf44",
+        "type": "ui-notification",
+        "z": "831b2fedf9359f4d",
+        "ui": "1739e78f07e241af",
+        "position": "center center",
+        "colorDefault": false,
+        "color": "#f66151",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": false,
+        "dismissText": "Nein",
+        "allowConfirm": false,
+        "confirmText": "Jup",
+        "raw": false,
+        "className": "",
+        "name": "Info über löschen",
+        "x": 570,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f1b38592d2107217",
+        "type": "ui-template",
+        "z": "b4599c1f41a6367f",
+        "group": "d10938ea3fb37908",
+        "page": "",
+        "ui": "",
+        "name": "Eventlist",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\" :headers=\"headers\"  :items-per-page=\"itemsPerPage\"  items-per-page-text=\"Event pro Seite\" :items-per-page-options=\"proseite\">\n       \n      <template v-slot:item.edit=\"{ item }\">\n        <v-chip color=\"yellow\" color=\"primary\" variant=\"flat\">\n          <v-btn variant=\"plain\" @click=\" onClick(item,'eventliste')\">{{getButtonText(item)}}</v-btn>\n        </v-chip>\n      </template>\n    </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'datum', value: 'datum',title:'Datum',sortable:true },\n          { text: 'event', value: 'event',title:'Event',sortable:true},\n          { text: 'waffe',value:'waffe',title:'Waffe',sortable:true},\n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'datum', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n\n      }\n    },methods: {\n    onClick: function (item,action) {\n    if (item !== undefined ) {\n    const payload = item;\n    payload.action = action;\n    this.send({ payload });\n    }},\n    \n    getButtonText: function (item) {\n    if (item !== undefined ) {\n    if (item.activ == 0) {\n    return 'asf';\n    } else {\n    return 'auswählen';\n    }\n    }\n    },\n    getChipColor: function (item) {\n    if (item !== undefined ) {\n    if (item.activ == 0) {\n    return 'blue';\n    } else {\n    return 'green';\n    }\n    }\n    }\n    }\n    }\n    </script>\n    <!--\n    <style>\n      .v-btn {\n      width: 56px;\n      min-width: 26px;\n      }\n      </style>  -->",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "5d208c688e7b2d7c",
+                "04c592cf615bf47c",
+                "3da6d3c8b271405f"
+            ]
+        ]
+    },
+    {
+        "id": "3da6d3c8b271405f",
+        "type": "debug",
+        "z": "b4599c1f41a6367f",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f3340ca33c25dcc0",
+        "type": "function",
+        "z": "b4599c1f41a6367f",
+        "name": "Load Events",
+        "func": "msg.topic = \"SELECT * FROM events order by datum\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 40,
+        "wires": [
+            [
+                "936afdb5e831446f"
+            ]
+        ]
+    },
+    {
+        "id": "c2de0134796f7f4d",
+        "type": "inject",
+        "z": "b4599c1f41a6367f",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "payload.action",
+                "v": "eventwechseln",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 50,
+        "y": 100,
+        "wires": [
+            [
+                "f3340ca33c25dcc0",
+                "1e758440719f165d"
+            ]
+        ]
+    },
+    {
+        "id": "936afdb5e831446f",
+        "type": "sqlite",
+        "z": "b4599c1f41a6367f",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 370,
+        "y": 40,
+        "wires": [
+            [
+                "f1b38592d2107217"
+            ]
+        ]
+    },
+    {
+        "id": "5d208c688e7b2d7c",
+        "type": "ui-template",
+        "z": "b4599c1f41a6367f",
+        "group": "7142d708899cb86b",
+        "page": "",
+        "ui": "",
+        "name": "Erfassung",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-row>\n    <v-col cols=\"16\" md=\"6\">\n      <v-card :subtitle=\"event.datum\"\n        :text=\"event.waffe + ' mit ' + event.anz_schuesse + ' Schüssen und ' + event.durchgaenge + ' Durchgängen'\"\n        :title=\"event.event\"></v-card>\n       \n     </v-col>\n    <v-col cols=\"4\" md=\"50\" align-self=\"end\">\n       \n          <v-row align=\"start\" style=\"height: 60px;\">\n      <v-btn color=\"black\" :disabled=\"erfassung_laeuft\" @click=\"onClick('eventwechseln')\">Event wechseln</v-btn>\n      </v-row>\n      <v-row  align=\"start\"\n        style=\"height: 60px;\">\n      <v-btn :color=\"buttoncolor\" :disabled=\"btnStart\" @click=\"onClick('erfassung')\">{{startbuttontext}}</v-btn>\n      </v-row>\n    </v-col>\n   \n  </v-row>\n  <v-row>\n    <!-- Namen der Schuetzen -->\n    <v-col cols=\"20\" md=\"100\">\n      <v-flex v-for=\"(s,index) in schuetzen\" :key=\"index\">\n       <v-chip class=\"namenChips\" :color=\"getfarbe(s.id,index)\" :prepend-icon=\"getHaekchen(s.id,index)\"><button @click=\"select(s.id,index)\">{{s.Name}} {{s.Vorname}} </button></v-chip>\n    </v-col>\n  </v-row> \n    <!-- Erfassungsblock einblenden-->\n    <v-row v-if=\"erfassungsBlockSichtbar\">\n      <v-container class=\"spacing-playground pa-6\" fluid>\n      <v-flex v-for=\"a in event.durchgaenge\">\n        <v-btn :color=\"get_Btn_Duchgang_Color(a)\" variant=\"flat\" @click=\"durchgangclick(a)\">Durchgang {{a}}</v-btn>\n      </v-flex>\n      </v-container>\n      <!-- Trefferliste anzeigen-->\n        <v-container class=\"ContainerTreffer\" >\n          <v-flex v-for=\"(i,index) in treffen_im_durchgang\" :key=\"index\">\n                   <v-chip class=\"TrefferChips\" :color=\"getChipColor(index)\" variant=\"flat\"  >\n              <button @click=\"trefferwaehlen(index)\" >{{i}}</button></v-btn>\n            </v-chip>\n          </v-flex>\n        </v-container>\n      <!-- Zahlenblock erzeugen-->\n      <v-container v-if=\"btnspeichernsichtbar\" class=\"spacing-playground pa-6\" fluid>\n      <v-row align=\"center\" >\n      <v-flex v-for=\"index in 7\" :key=\"index\">\n        <v-btn class=\"zahlenblock\" color=\"white\" @click=\"neuerwert(index-1)\">{{index-1}}</v-btn>\n      </v-flex>\n      </v-row>\n      <v-row align=\"center\">\n        <v-flex v-for=\"index in 4\" :key=\"index\">\n          <v-btn class=\"zahlenblock\" color=\"black\" @click=\"neuerwert(index+6)\">{{index+6}}</v-btn>\n        </v-flex>\n        </v-row>\n      </v-row>\n      \n    </v-container>\n   \n  \n  </v-row>\n  <v-row v-if=\"btnspeichernsichtbar\">\n    <v-container class=\"spacing-playground pa-2\">\n      <v-btn  @click=\"dg_speichern\">Speichern</v-btn>\n    </v-container>\n  </v-row>\n</template>\n<script>\n  export default {\n    data () {\n      const event ={datum:\"\",waffe:\"Waffe noch nicht gewählt\",anz_schuesse:0,durchgaenge:0};\n      const schuetzen = [];\n      const ausgewaehlte_schuetzen_id = 0;\n      const erfassung_laeuft = false;\n      const startbuttontext =\"Erfassung beginnen\"\n      const buttoncolor = \"green\";\n      const erfassungsBlockSichtbar=false;\n      const btnspeichernsichtbar=false;\n      const btnStart=true;\n      const treffen_im_durchgang = [];\n      const dg_nr=0;\n      const ausgewaehltesErgebniss =0;\n      return {\n          event,\n          schuetzen,\n          startbuttontext,\n          buttoncolor,\n          ausgewaehlte_schuetzen_id,\n          erfassungsBlockSichtbar,\n          btnStart,\n          btnspeichernsichtbar,\n          treffen_im_durchgang,\n          dg_nr,\n          ausgewaehltesErgebniss\n      }\n    },\n    watch: {\n      // watch for message\n      msg: function() {\n        if (this.msg.payload != undefined) {\n          if (this.msg.payload.action ==\"eventliste\") {\n            this.event=this.msg.payload;\n            this.schuetzen=[];\n            this.btnStart=false;\n          } \n          if (this.msg.payload.action ==\"schuetzen\") {\n            this.schuetzen=this.msg.payload.schuetzen;\n          }\n          if (this.msg.payload.dg_return) {\n            this.treffen_im_durchgang=this.msg.payload.dg;\n            if (this.treffen_im_durchgang.length !== 0 ) {\n                if  (confirm(\"Achtung! In diesem Durchgang wurden bereits Ergenisse erfasst. Möchtest du diese bearbeiten?\", \"Änderungen durchführen?\") == false) {\n                    this.btnspeichernsichtbar=false;\n                };\n            }\n          }\n        }\n        \n      }\n    },\n    methods: {\n      onClick: function (item) {\n        const payload = {};\n        if (item !== undefined ) {\n          payload.action = item;\n          if (item==\"erfassung\") {\n            if (!this.erfassung_laeuft) {\n              this.erfassung_laeuft=true;\n              this.buttoncolor=\"red\";\n              this.startbuttontext=\"Erfassung unterbrechen\";\n              payload.laeuft=true;\n              \n            } else {\n              this.erfassung_laeuft=false;\n              this.buttoncolor=\"green\";\n              this.startbuttontext=\"Erfassung beginnen\";\n              payload.laeuft=false;\n              this.erfassungsBlockSichtbar=false;\n              this.btnspeichernsichtbar=false;\n              this.ausgewaehlte_schuetzen_id=0;\n              this.treffen_im_durchgang=[];\n            }\n          } \n          this.send({ payload });\n        }\n      },\n      select: function (item,index) {\n        if (item !== undefined ) {\n          if (!this.erfassung_laeuft) {\n             if (this.schuetzen[index].delete_moeglich) {  \n              const payload = {};\n              payload.action = \"loeschen\";\n              payload.id=item;\n              payload.eventID=this.event.id;\n              this.send({ payload });\n            } else {\n              alert (\"Ein löschen ist nicht möglich, da schon Ergebnisse erfasst wurde. Bitte erst alle Werte auf 0 setzen\");\n            }\n            \n          } else {\n            this.ausgewaehlte_schuetzen_id = item;\n            this.btnspeichernsichtbar=false;\n            this.erfassungsBlockSichtbar=true;\n            this.dg_nr=0;\n            this.btnspeichernsichtbar=false;\n            this.treffen_im_durchgang=[];\n          }\n        }\n      },\n      getfarbe: function (item,index) {\n       if (item == this.ausgewaehlte_schuetzen_id) {\n          return 'red';\n        } \n        if (!this.schuetzen[index].delete_moeglich) {\n          return 'green';\n          }else {\n          return 'black';\n        }\n\n      },\n      getHaekchen: function (item,index) {\n        if (!this.schuetzen[index].delete_moeglich) {\n          return 'mdi-checkbox-marked-circle';\n        }\n      },\n      get_Btn_Duchgang_Color: function(item) {\n        if (item == this.dg_nr) {\n          return 'green';\n          }else {\n            return '#E1F5FE';\n          }\n      },\n      getChipColor: function (item) {\n      if (item !== undefined ) {\n      if (item == this.ausgewaehltesErgebniss) {\n      return 'yellow';\n      } else {\n      return 'green';\n      }\n      }\n      },\n      trefferwaehlen: function (event) {\n        this.ausgewaehltesErgebniss = event;\n      },\n      neuerwert: function (item) {\n        if (item !== undefined ) {\n          this.treffen_im_durchgang[this.ausgewaehltesErgebniss]=item;\n            if (this.ausgewaehltesErgebniss+1<parseInt(this.event.anz_schuesse)) {\n               this.ausgewaehltesErgebniss++; \n            }else {\n              this.ausgewaehltesErgebniss = 0;\n            }\n          }\n      },\n      durchgangclick: function (item) {\n        //daten des Schuetzen vom Durchgang anfragen in Watch return erwarten\n            this.dg_nr=item;\n            this.btnspeichernsichtbar=true;\n            const payload = {};\n            payload.action = \"durchgangladen\";\n            payload.id=this.ausgewaehlte_schuetzen_id ;\n            payload.eventID=this.event.id;\n            payload.dg=item;\n            this.ausgewaehltesErgebniss = 0\n            this.send({ payload });\n      },\n      dg_speichern: function () {\n            this.btnspeichernsichtbar=false;\n            const payload = {};\n            payload.action = \"durchgangspeichern\";\n            payload.id=this.ausgewaehlte_schuetzen_id ;\n            payload.eventID=this.event.id;\n            payload.dg_nr=this.dg_nr;\n            payload.dg=this.treffen_im_durchgang;\n            this.send({ payload });\n            this.treffen_im_durchgang=[];\n            this.ausgewaehlte_schuetzen_id  =0;\n            this.dg_nr=0;\n            this.erfassungsBlockSichtbar=false;\n      }\n    }\n  }\n    </script>\n\n \n<style>\n  .ContainerTreffer {\n    height: 60px;\n  }\n  .TrefferChips{\n    width: 45px;\n    height: 45px;\n    margin: 2px;\n    justify-content: center;\n  }\n  .namenChips{\n    justify-content: center;\n  }\n  \n  .TrefferChips .v-chip__content {\n    color: black !important;\n    font-weight: bold;\n    font-size: x-large;\n    }\n  .zahlenblock {\n      font-weight: bold;\n      font-size: x-large;\n  }\n</style> ",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 140,
+        "wires": [
+            [
+                "3e7bb6e99f1b88d1"
+            ]
+        ]
+    },
+    {
+        "id": "ec4974b1619a3a7c",
+        "type": "sqlite",
+        "z": "b4599c1f41a6367f",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "7f91c3586e028e1c"
+            ]
+        ]
+    },
+    {
+        "id": "79d4cb5ea4270eeb",
+        "type": "link in",
+        "z": "b4599c1f41a6367f",
+        "name": "link von Stammdaten",
+        "links": [
+            "21a79fe92855e48b"
+        ],
+        "x": 25,
+        "y": 420,
+        "wires": [
+            [
+                "64ef814bfd5613cd"
+            ]
+        ]
+    },
+    {
+        "id": "be069faf30fa45e4",
+        "type": "link in",
+        "z": "b4599c1f41a6367f",
+        "name": "Erfassung Events",
+        "links": [
+            "dd1b205c836ccb8b",
+            "618aede6146cca60"
+        ],
+        "x": 75,
+        "y": 180,
+        "wires": [
+            [
+                "f3340ca33c25dcc0",
+                "1e758440719f165d"
+            ]
+        ]
+    },
+    {
+        "id": "3e7bb6e99f1b88d1",
+        "type": "switch",
+        "z": "b4599c1f41a6367f",
+        "name": "gewählt?",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "eventwechseln",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "eventliste",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "erfassung",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "loeschen",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "durchgangladen",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "durchgangspeichern",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 720,
+        "y": 80,
+        "wires": [
+            [
+                "4b8540322253e3b4"
+            ],
+            [
+                "acbbeb5636902bfa",
+                "d22b4eaccc59e9d6"
+            ],
+            [
+                "44d585952e55f535",
+                "6bd2f5aa02bce19b"
+            ],
+            [
+                "10a3c0cd0c7713b5",
+                "5b75e8a3c0edbb42"
+            ],
+            [
+                "08486568a5da69f7"
+            ],
+            [
+                "4ca075568a04e211"
+            ]
+        ]
+    },
+    {
+        "id": "7b330124b9062c70",
+        "type": "ui-control",
+        "z": "b4599c1f41a6367f",
+        "name": "",
+        "ui": "1739e78f07e241af",
+        "events": "change",
+        "x": 1140,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b8540322253e3b4",
+        "type": "function",
+        "z": "b4599c1f41a6367f",
+        "name": "show",
+        "func": "msg.payload = {\n\n    groups: {\n        hide: ['Erfassung:Mitgliederliste'],\n        show: ['Erfassung:Eventauswahl']\n    }\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 20,
+        "wires": [
+            [
+                "7b330124b9062c70"
+            ]
+        ]
+    },
+    {
+        "id": "acbbeb5636902bfa",
+        "type": "function",
+        "z": "b4599c1f41a6367f",
+        "name": "hide",
+        "func": "msg.payload = {\n    \n    groups: {\n        show: ['Erfassung:Mitgliederliste'],\n        hide: ['Erfassung:Eventauswahl']\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 60,
+        "wires": [
+            [
+                "7b330124b9062c70"
+            ]
+        ]
+    },
+    {
+        "id": "ae21dc546bdc70b2",
+        "type": "sqlite",
+        "z": "b4599c1f41a6367f",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "SELECT \tmitglieder.id,\n\t\tmitglieder.Name, \n\t\tmitglieder.Vorname as vorname,\n\t\tDG1,\n\t\tDG2,\n\t\tDG3,\n\t\tDG4 \n\tFROM ergebnisse  \n\tJOIN mitglieder ON ergebnisse.M_ID=mitglieder.ID \n\t\tWHERE ergebnisse.E_ID={{payload.id}} ORDER BY mitglieder.ID",
+        "name": "db",
+        "x": 1210,
+        "y": 120,
+        "wires": [
+            [
+                "e8969986917965e9"
+            ]
+        ]
+    },
+    {
+        "id": "d22b4eaccc59e9d6",
+        "type": "template",
+        "z": "b4599c1f41a6367f",
+        "name": "Ergebnisse laden",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT \tmitglieder.id,\n\t\tmitglieder.Name, \n\t\tmitglieder.Vorname as Vorname,\n\t\tconcat(DG1,  DG2, DG3 , DG4) AS Durchgaenge\n\tFROM ergebnisse  \n\tJOIN mitglieder ON ergebnisse.M_ID=mitglieder.ID \n\t\tWHERE ergebnisse.E_ID='{{flow.eventID}}' ORDER BY mitglieder.ID",
+        "output": "str",
+        "x": 1010,
+        "y": 160,
+        "wires": [
+            [
+                "ae21dc546bdc70b2"
+            ]
+        ]
+    },
+    {
+        "id": "e8969986917965e9",
+        "type": "function",
+        "z": "b4599c1f41a6367f",
+        "name": "infos hinzufuegen",
+        "func": "const new_msg = {}\nnew_msg.action=\"schuetzen\";\nnew_msg.schuetzen=msg.payload;\n\nfor (var i in msg.payload) {\n    const elemente = msg.payload[i].Durchgaenge.split(',');\n    if (summe_der_elemente(elemente)>0) {\n        new_msg.schuetzen[i].delete_moeglich = false;\n    } else {\n        new_msg.schuetzen[i].delete_moeglich = true;\n    }\n    delete new_msg.schuetzen[i]['Durchgaenge'];\n}\nmsg.payload = new_msg; \nreturn msg;\n\nfunction summe_der_elemente (liste_von_Treffern  ) {\n    var summe = 0;\n    for (var j in liste_von_Treffern) {\n        if (parseInt(liste_von_Treffern[j])) {\n            summe = summe + parseInt(liste_von_Treffern[j]);\n        }\n    }\n    return summe;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 320,
+        "wires": [
+            [
+                "28b7026c0188fb3b",
+                "b665c894aa6c5add"
+            ]
+        ]
+    },
+    {
+        "id": "5b75e8a3c0edbb42",
+        "type": "template",
+        "z": "b4599c1f41a6367f",
+        "name": "Schuetzenladen",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT * FROM mitglieder \n\n    WHERE activ=1 AND geloescht=0 AND\n    ID not in (SELECT M_ID from ergebnisse WHERE E_ID={{flow.eventID}}) ORDER BY NAME;\n\n",
+        "output": "str",
+        "x": 260,
+        "y": 320,
+        "wires": [
+            [
+                "ec4974b1619a3a7c"
+            ]
+        ]
+    },
+    {
+        "id": "7f91c3586e028e1c",
+        "type": "ui-template",
+        "z": "b4599c1f41a6367f",
+        "group": "9407542b3b53542b",
+        "page": "",
+        "ui": "",
+        "name": "MGliste",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-row>\n      <v-col><v-checkbox color=\"green\" v-model=\"showMitgliedsNR\" label=\"Mitglieds NR\"></v-checkbox></v-col>\n      <v-col><v-checkbox color=\"green\" v-model=\"showVerein\" label=\"Vereinskürzel\"></v-checkbox></v-col>\n    </v-row>\n  <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\" :sort-desc.sync=\"sortDesc\"\n    :headers=\"headers\" :items-per-page=\"itemsPerPage\" items-per-page-text=\"Mitglied pro Seite\"\n    :items-per-page-options=\"proseite\">\n\n    <template v-slot:item.edit=\"{ item }\">\n      <v-chip color=\"green\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'hinzufuegen')\">hinzufügen</v-btn>\n      </v-chip>\n    </template>\n  </v-data-table>\n</template>\n<script>\n    export default {\n    data () {\n      //const schuetzen = [{\"id\":57,\"Name\":\"Adam\",\"Vorname\":\"Dietrich\",\"mgnr\":10000,\"activ\":1}];\n      return {\n        showMitgliedsNR: false,\n        showVerein: false,\n        search: '',\n        sortBy: [{ key: 'Name', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:-1,\n        //schuetzen,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n      }\n    },\n    computed: {\n      headers() {\n        let headers = [\n          { text: 'Name', value: 'Name',title:'Name',sortable:true},\n          { text: 'Vorname',value:'Vorname',title:'Vorname',sortable:true},\n          { text: 'edit',value:'edit'} ]\n        if (this.showVerein) {\n        headers.unshift({ text: 'Verein', value: 'verein',title:'VR',sortable:true})\n        }\n        if (this.showMitgliedsNR) {\n          headers.unshift({ text: 'MitgliedsNR', value: 'mgnr',title:'NR',sortable:true})\n        }\n        \n        return headers\n      }\n    },\n    watch: {\n      // watch for message\n        msg: function() {\n          if (this.msg.payload != undefined) {\n            this.schuetzen=this.msg.payload;\n          }\n        },\n    },\n    methods: {\n      //hinzufuegen\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action=action\n          this.send({ payload });\n      }},\n\n    }\n  }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 540,
+        "y": 320,
+        "wires": [
+            [
+                "71314cc9741d7f1e"
+            ]
+        ]
+    },
+    {
+        "id": "4953f557c37f7992",
+        "type": "template",
+        "z": "b4599c1f41a6367f",
+        "name": "insert",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO ergebnisse (M_ID,E_ID) \n    VALUES ({{payload.id}},\n            {{flow.eventID}}\n           )",
+        "output": "str",
+        "x": 830,
+        "y": 320,
+        "wires": [
+            [
+                "d5d1bce53d86b2fa",
+                "d22b4eaccc59e9d6",
+                "5b75e8a3c0edbb42"
+            ]
+        ]
+    },
+    {
+        "id": "d5d1bce53d86b2fa",
+        "type": "sqlite",
+        "z": "b4599c1f41a6367f",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 1010,
+        "y": 300,
+        "wires": [
+            [
+                "b665c894aa6c5add",
+                "28b7026c0188fb3b"
+            ]
+        ]
+    },
+    {
+        "id": "10a3c0cd0c7713b5",
+        "type": "template",
+        "z": "b4599c1f41a6367f",
+        "name": "Schuetze entfernen",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "DELETE from ergebnisse \n\tWHERE\tM_ID={{payload.id}} AND\n\t\t\tE_ID={{payload.eventID}}",
+        "output": "str",
+        "x": 1010,
+        "y": 220,
+        "wires": [
+            [
+                "d5d1bce53d86b2fa",
+                "d22b4eaccc59e9d6"
+            ]
+        ]
+    },
+    {
+        "id": "04c592cf615bf47c",
+        "type": "change",
+        "z": "b4599c1f41a6367f",
+        "name": "Event_ID_save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "eventID",
+                "pt": "flow",
+                "to": "payload.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 80,
+        "wires": [
+            [
+                "3e7bb6e99f1b88d1"
+            ]
+        ]
+    },
+    {
+        "id": "71314cc9741d7f1e",
+        "type": "switch",
+        "z": "b4599c1f41a6367f",
+        "name": "hinzufuegen",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "hinzufuegen",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "4953f557c37f7992"
+            ]
+        ]
+    },
+    {
+        "id": "44d585952e55f535",
+        "type": "function",
+        "z": "b4599c1f41a6367f",
+        "name": "hide",
+        "func": "let new_msg ={};\nif (msg.payload.laeuft) {\n    new_msg = {\n        groups: {\n            hide: ['Erfassung:Mitgliederliste'],\n        }\n    };\n  }else {\n    new_msg = {\n        groups: {\n            show: ['Erfassung:Mitgliederliste'],\n        }\n  }\n  }    \n\n\nmsg.payload = new_msg;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 100,
+        "wires": [
+            [
+                "7b330124b9062c70"
+            ]
+        ]
+    },
+    {
+        "id": "6bd2f5aa02bce19b",
+        "type": "link out",
+        "z": "b4599c1f41a6367f",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [],
+        "x": 1185,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "64ef814bfd5613cd",
+        "type": "change",
+        "z": "b4599c1f41a6367f",
+        "name": "init",
+        "rules": [
+            {
+                "t": "set",
+                "p": "eventID",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "5b75e8a3c0edbb42"
+            ]
+        ]
+    },
+    {
+        "id": "08486568a5da69f7",
+        "type": "link out",
+        "z": "b4599c1f41a6367f",
+        "name": "druchgangladen",
+        "mode": "link",
+        "links": [
+            "394c9593f74ff49b"
+        ],
+        "x": 845,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "394c9593f74ff49b",
+        "type": "link in",
+        "z": "b4599c1f41a6367f",
+        "name": "link in 1",
+        "links": [
+            "08486568a5da69f7"
+        ],
+        "x": 115,
+        "y": 500,
+        "wires": [
+            [
+                "dcad9b2fe67cc795"
+            ]
+        ]
+    },
+    {
+        "id": "dcad9b2fe67cc795",
+        "type": "template",
+        "z": "b4599c1f41a6367f",
+        "name": "DG laden",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT \tDG{{payload.dg}} AS dg\n\tFROM ergebnisse  \n\t\tWHERE \tE_ID={{payload.eventID}} AND\n\t\t\t\tM_ID={{payload.id}}",
+        "output": "str",
+        "x": 220,
+        "y": 500,
+        "wires": [
+            [
+                "251193fb1ac94361"
+            ]
+        ]
+    },
+    {
+        "id": "5cc15b426dfbfd7f",
+        "type": "sqlite",
+        "z": "b4599c1f41a6367f",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "cff2fd6bafeda30d"
+            ]
+        ]
+    },
+    {
+        "id": "251193fb1ac94361",
+        "type": "change",
+        "z": "b4599c1f41a6367f",
+        "name": "DG_save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "DG-load.dg",
+                "pt": "flow",
+                "to": "payload.dg",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "DG-load.id",
+                "pt": "flow",
+                "to": "payload.id",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "DG-load.eventID",
+                "pt": "flow",
+                "to": "payload.eventID",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 500,
+        "wires": [
+            [
+                "5cc15b426dfbfd7f"
+            ]
+        ]
+    },
+    {
+        "id": "cff2fd6bafeda30d",
+        "type": "function",
+        "z": "b4599c1f41a6367f",
+        "name": "return basteln",
+        "func": "let dg = [];\nlet warnung = false;\n\nif (msg.payload[0].dg) {\n        dg = msg.payload[0].dg.split(',');\n        //wenn es im Durchgang schon daten gibt\n        //muss vor überschreibung gewarnt werden\n        warnung = true;\n    }\n\nmsg.payload = {\n    dg_return:true,\n    eventID : flow.get(\"DG-load\").eventID,\n    id: flow.get(\"DG-load\").id,\n    dg: dg,\n    warnung: warnung\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 500,
+        "wires": [
+            [
+                "28b7026c0188fb3b"
+            ]
+        ]
+    },
+    {
+        "id": "28b7026c0188fb3b",
+        "type": "link out",
+        "z": "b4599c1f41a6367f",
+        "name": "zu_erfassung",
+        "mode": "link",
+        "links": [
+            "188a81fa828ce613"
+        ],
+        "x": 1245,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "188a81fa828ce613",
+        "type": "link in",
+        "z": "b4599c1f41a6367f",
+        "name": "returns",
+        "links": [
+            "28b7026c0188fb3b"
+        ],
+        "x": 345,
+        "y": 180,
+        "wires": [
+            [
+                "5d208c688e7b2d7c",
+                "5b75e8a3c0edbb42"
+            ]
+        ]
+    },
+    {
+        "id": "4ca075568a04e211",
+        "type": "link out",
+        "z": "b4599c1f41a6367f",
+        "name": "druchgangspeichern",
+        "mode": "link",
+        "links": [
+            "a00fad139dacb629"
+        ],
+        "x": 845,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a00fad139dacb629",
+        "type": "link in",
+        "z": "b4599c1f41a6367f",
+        "name": "durchgangspeichern",
+        "links": [
+            "4ca075568a04e211"
+        ],
+        "x": 115,
+        "y": 560,
+        "wires": [
+            [
+                "8efdc18e2afebc3d"
+            ]
+        ]
+    },
+    {
+        "id": "8efdc18e2afebc3d",
+        "type": "template",
+        "z": "b4599c1f41a6367f",
+        "name": "DG speichern",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "UPDATE ergebnisse SET \n     DG{{payload.dg_nr}} = '{{payload.dg}}'\n        WHERE E_ID = {{payload.eventID}} AND M_ID={{payload.id}}",
+        "output": "str",
+        "x": 240,
+        "y": 560,
+        "wires": [
+            [
+                "522e9fe8e6204454"
+            ]
+        ]
+    },
+    {
+        "id": "522e9fe8e6204454",
+        "type": "sqlite",
+        "z": "b4599c1f41a6367f",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 390,
+        "y": 560,
+        "wires": [
+            [
+                "b665c894aa6c5add",
+                "d22b4eaccc59e9d6"
+            ]
+        ]
+    },
+    {
+        "id": "b665c894aa6c5add",
+        "type": "link out",
+        "z": "b4599c1f41a6367f",
+        "name": "zur_Anzeige",
+        "mode": "link",
+        "links": [
+            "d5fd0f9a7c54b8bc"
+        ],
+        "x": 1285,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "1e758440719f165d",
+        "type": "function",
+        "z": "b4599c1f41a6367f",
+        "name": "restore",
+        "func": "msg.payload = {};\nif (flow.get(\"eventID\")!= undefined ) {\n    msg.payload.action=\"eventwechseln\";\n\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "3e7bb6e99f1b88d1"
+            ]
+        ]
+    },
+    {
+        "id": "fe4a128b89febbaf",
+        "type": "function",
+        "z": "8541444b36ac495a",
+        "name": "Select",
+        "func": "msg.topic = \"SELECT * FROM events order by datum\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "5683b64433080409"
+            ]
+        ]
+    },
+    {
+        "id": "732c4134caf6dae8",
+        "type": "inject",
+        "z": "8541444b36ac495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "fe4a128b89febbaf"
+            ]
+        ]
+    },
+    {
+        "id": "044be183d2f4bb83",
+        "type": "debug",
+        "z": "8541444b36ac495a",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "5cd9ab64949f423f",
+        "type": "template",
+        "z": "8541444b36ac495a",
+        "name": "Select Ergebnisse",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT mitglieder.verein,mitglieder.Name, mitglieder.Vorname as vorname,DG1,DG2,DG3,DG4\n\t\tFROM ergebnisse  JOIN mitglieder ON ergebnisse.M_ID=mitglieder.ID WHERE ergebnisse.E_ID={{flow.eventID}} ORDER BY mitglieder.ID",
+        "output": "str",
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "aeca952a84630df2"
+            ]
+        ]
+    },
+    {
+        "id": "2d29c020d8ec75f4",
+        "type": "function",
+        "z": "8541444b36ac495a",
+        "name": "Summe hinzufügen",
+        "func": "const ergebnissliste = [];\n\n\ndelete msg.topic;\n\n//geht die komplette SQL Antwort durch\nfor (var i in msg.payload) {\n    const durchgaenge = [];\n    var DG1 = [];\n    var DG2 = [];\n    var DG3 = [];\n    var DG4 = [];\n    var summe = 0;\n    var dg_summe =0;\n    var dg_summen = [];\n    \n    if (msg.payload[i].DG1) {\n        DG1 = msg.payload[i].DG1.split(',');\n        dg_summe = summe_der_elemente(DG1);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG1);\n        dg_summen.push(dg_summe);\n    }\n    if (msg.payload[i].DG2) {\n        DG2 = msg.payload[i].DG2.split(',');\n        dg_summe = summe_der_elemente(DG2);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG2);\n        dg_summen.push(dg_summe);\n    } \n    if (msg.payload[i].DG3) {\n        DG3 = msg.payload[i].DG3.split(',');\n        dg_summe = summe_der_elemente(DG3);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG3);\n        dg_summen.push(dg_summe);\n    }\n    if (msg.payload[i].DG4) {\n        DG4 = msg.payload[i].DG4.split(',');\n        dg_summe = summe_der_elemente(DG4);\n        summe = summe + dg_summe;\n        durchgaenge.push(DG4);\n        dg_summen.push(dg_summe);\n    }\n   \n    const neueDaten = {\n        verein: msg.payload[i].verein,\n        name: msg.payload[i].Name,\n        vorname: msg.payload[i].vorname,\n        treffer: durchgaenge,\n        summen:dg_summen,\n        summe: summe\n    }\n  \n   ergebnissliste.push(neueDaten);\n    \n}\nmsg.payload = ergebnissliste;\nmsg.topic=flow.get(\"EventInfo\");\n\nreturn msg;\n\nfunction summe_der_elemente (liste_von_Treffern  ) {\n    var summe = 0;\n    for (var j in liste_von_Treffern) {\n        if (parseInt(liste_von_Treffern[j])) {\n            summe = summe + parseInt(liste_von_Treffern[j]);\n        }\n    }\n    return summe;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "b076269e4e2175aa"
+            ]
+        ]
+    },
+    {
+        "id": "b076269e4e2175aa",
+        "type": "ui-template",
+        "z": "8541444b36ac495a",
+        "group": "b77de3d434654ecd",
+        "page": "",
+        "ui": "",
+        "name": "TreffelisteTemplate",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "head": "",
+        "format": "<template>\n  <!-- Hier steht der Kopf Eventwechsel, ausgewähltes Event und die Checkbox ob Verein angzeigt wird  -->\n  <v-row id=\"Kopf\">\n  <v-col class=\"notPrint\" cols=\"auto\" class=\"ma-2 pa-2\" >  \n    <v-btn color=\"black\"  @click=\"onClick('eventwechseln')\">Event wechseln</v-btn>\n  </v-col> \n  \n    <v-col cols=\"auto\" class=\"ma-2 pa-2\">\n      <v-card :subtitle=\"msg?.topic.datum +'  ' + msg?.topic.waffe + ' mit ' + msg?.topic.anz_schuesse + ' Schüssen und ' + msg?.topic.durchgaenge + ' Durchgängen'\"\n         :title=\"msg?.topic.event\">\n      \n      </v-card>\n        \n    </v-col>\n    <v-col class=\"notPrint\"><v-checkbox color=\"green\" v-model=\"showVerein\" label=\"Vereinskürzel\"></v-checkbox>\n    </v-col>  \n  </v-row>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field class=\"notPrint\"  v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :headers=\"headers\" items-per-page-text=\"Schützen pro Seite\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\">\n    <template v-slot:item.nr=\"{ item,index }\">\n      {{index+1}}\n    </template>  \n    <template v-slot:item.treffer=\"{ item }\">\n       \n      <template v-for=\"(x,index) in item.treffer\" :key=\"index\" class=\"ma-0 pa-0\">\n      \n        <v-row align=\"center\" class=\"ma-0 pa-0\">\n          \n          <v-col class=\"ma-0 pa-0\">\n            <template v-for=\"y in x\">\n              <v-chip class=\"chipsize\" color=\"orange\">{{y}}</v-chip>\n            </template>\n          </v-col>\n          <v-col cols=\"1\" class=\"ma-0 pa-0\"> \n            <v-chip class=\"chipsize\" color=\"green\">{{item.summen[index]}}</v-chip>\n          </v-col>  \n        </v-row> \n\n      </template>\n        \n   \n    </template>\n    </v-data-table>\n    <v-row no-gutters class=\"notPrint\" >\n      <v-col cols=\"12\" class=\"ma-2 pa-2\">\n        <v-btn color=\"black\"  @click=\"toPDF('topdf')\" >PDF</v-btn>\n      </v-col>\n    </v-row>\n</template>\n<script>\n    export default {\n    data () {\n      return {\n        showVerein: false,\n        search: '',\n        sortBy: [{ key: 'summe', order:'desc'}],\n        sortDesc: false,\n      }\n    },\n    computed: {\n      headers () {\n        let headers = [\n          { text: 'Name', value: 'name',title:'Name',sortable:true },\n          { text: 'Vorname', value: 'vorname',title:'Vorname',sortable:true},\n          { text: 'Treffer',value:'treffer',title:'Treffer',align: 'center'},\n          { text: 'Summe',value:'summe',title:'Ergebnis',align: 'center',sortable:true}];\n        if (this.showVerein) {\n          headers.unshift({ text: 'Vereinskürzel', value: 'verein',title:'VR',sortable:true})\n        }\n        headers.unshift({ text: 'Nr.', value: 'nr',title:'Pos' })\n        return headers\n      }\n    },\n        \n    methods: {\n        // add a function to determine the color of the progress bar given the row's item\n    \n      onClick: function (item) {\n        if (item !== undefined ) {\n          const payload = {};\n          payload.action = item;\n          this.send({ payload });\n        }\n      },\n      toPDF: function (item) {\n         const payload = {};\n          let all = document.body.innerHTML;\n         //let all = document.getElementsByTagName('html')[0].innerHTML;\n          payload.html = all;\n          payload.action= item;\n          window.print();\n          this.send({ payload });\n      }\n    }\n  }\n</script>\n\n<style>\n  .chipsize{\n  width:35px;\n  justify-content: center;\n  }\n.v-chip__content {\ncolor: black !important;\nfont-weight: bold;\n}\n  // define any styles here - supports raw CSS\n  .v-field__field {\n    padding: 0 0px 0 6px !important;\n    height: 35px !important;\n    min-height: 35px !important;\n  }\n\n  .v-field__input {\n    padding: 0 0px 0 6px !important;\n    height: 35px !important;\n    min-height: 35px !important;\n  }\n\n  .v-data-table {\n    width: 1755px;\n  }\n\n  .v-data-table-column--no-padding {\n    padding: 0 0px 0 6px !important;\n  }\n\n  .v-data-table-column--align-start {\n    padding: 0 0px 0 6px !important;\n  }\n\n  .v-data-table-header__content {\n    color: black;\n    font-weight: bold;\n    height: 40px;\n    min-height: 40px;\n  }\n\n  .v-data-table-header__content:hover {\n    color: black;\n    font-weight: bold;\n  }\n\n  .v-data-table__th {\n    background-color: #B3C1C6;\n    white-space: nowrap;\n  }\n\n  .v-data-table .v-data-table__td {\n    white-space: nowrap;\n    height: 40px !important;\n    min-height: 40px !important;\n  }\n\n  .v-table__wrapper tr:nth-child(even) {\n    background-color: #f2f2f2;\n  }\n\n  .v-table__wrapper tr:hover {\n    background-color: #ddd;\n    color: black;\n  }\n\n  .v-data-table-footer {\n    background-color: #B3C1C6;\n    padding: 0 0px 0 0px !important;\n    color: black;\n    height: 48px !important;\n    min-height: 35px !important;\n    \n  }\n\n  .v-data-table-footer .v-input__control {\n    height: 35px !important;\n    min-height: 20px !important;\n    padding: 0 0px 0 0px !important;\n  }\n\n\n@media print {\n \n  .v-table__wrapper tr:nth-child(even) {\n  -webkit-print-color-adjust: exact;\n  print-color-adjust: exact;\n  background-color: black\n  color: #eee;\n  }\n\n  body {\n    margin: 0;\n    color: #333;\n    background-color: #fff;\n  }\n  #Kopf {\n    position: absolute;\n    top: -120px;\n    left: 130px;\n    overflow: hidden;\n    margin: 0 !important;\n    padding: 0 !important;\n  }\n  .v-toolbar__content {\n      display: none;\n  }\n  .notPrint {\n    display: none;\n  }\n  \n\n}\n@page {\n  size: A4;\n  margin: 0;\n  margin-left:1.5cm;\n}\n  </style>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "780ca46c68f8ca7a",
+                "044be183d2f4bb83"
+            ]
+        ]
+    },
+    {
+        "id": "d5fd0f9a7c54b8bc",
+        "type": "link in",
+        "z": "8541444b36ac495a",
+        "name": "nach dem speichern",
+        "links": [
+            "b665c894aa6c5add",
+            "dd1b205c836ccb8b"
+        ],
+        "x": 35,
+        "y": 360,
+        "wires": [
+            [
+                "30a78a611d8aa30c"
+            ]
+        ]
+    },
+    {
+        "id": "5683b64433080409",
+        "type": "sqlite",
+        "z": "8541444b36ac495a",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 410,
+        "y": 60,
+        "wires": [
+            [
+                "12d78f1e9765af40"
+            ]
+        ]
+    },
+    {
+        "id": "aeca952a84630df2",
+        "type": "sqlite",
+        "z": "8541444b36ac495a",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 650,
+        "y": 220,
+        "wires": [
+            [
+                "2d29c020d8ec75f4",
+                "044be183d2f4bb83"
+            ]
+        ]
+    },
+    {
+        "id": "12d78f1e9765af40",
+        "type": "ui-template",
+        "z": "8541444b36ac495a",
+        "group": "56079ec0ed49582a",
+        "page": "",
+        "ui": "",
+        "name": "Eventlist",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\" hide-details> </v-text-field>\n  <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" \n                :sort-by.sync=\"sortBy\" :sort-desc.sync=\"sortDesc\"\n                :headers=\"headers\" :items-per-page=\"itemsPerPage\" \n                items-per-page-text=\"Event pro Seite\"\n              :items-per-page-options=\"proseite\">\n    <template v-slot:item.edit=\"{ item }\">\n      <v-chip color=\"yellow\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'eventliste')\">auswählen</v-btn>\n      </v-chip>\n    </template>\n  </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'datum', value: 'datum',title:'Datum',sortable:true },\n          { text: 'event', value: 'event',title:'Event',sortable:true},\n          { text: 'waffe',value:'waffe',title:'Waffe',sortable:true},\n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'datum', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n\n      }\n    },methods: {\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action = action;\n          this.send({ payload });\n        }\n      },\n    }\n  }\n</script>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 540,
+        "y": 60,
+        "wires": [
+            [
+                "42ba0e67e5961067"
+            ]
+        ]
+    },
+    {
+        "id": "42ba0e67e5961067",
+        "type": "change",
+        "z": "8541444b36ac495a",
+        "name": "Event_ID_save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "eventID",
+                "pt": "flow",
+                "to": "payload.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 60,
+        "wires": [
+            [
+                "780ca46c68f8ca7a"
+            ]
+        ]
+    },
+    {
+        "id": "780ca46c68f8ca7a",
+        "type": "switch",
+        "z": "8541444b36ac495a",
+        "name": "gewählt?",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "eventwechseln",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "eventliste",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "topdf",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 900,
+        "y": 80,
+        "wires": [
+            [
+                "8c9b234cb2b4bbef"
+            ],
+            [
+                "8d7c08c70bae14ac",
+                "f78f64e2d65dca66"
+            ],
+            [
+                "3cd342af7a5b2f66",
+                "044be183d2f4bb83"
+            ]
+        ]
+    },
+    {
+        "id": "8c9b234cb2b4bbef",
+        "type": "function",
+        "z": "8541444b36ac495a",
+        "name": "show",
+        "func": "msg.payload = {\n\n    groups: {\n        show: ['Ergebnisse:Eventliste'],\n       \n    }\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 40,
+        "wires": [
+            [
+                "d1ff5401d73e9a1d"
+            ]
+        ]
+    },
+    {
+        "id": "8d7c08c70bae14ac",
+        "type": "function",
+        "z": "8541444b36ac495a",
+        "name": "hide",
+        "func": "msg.payload = {\n    \n    groups: {\n        hide: ['Ergebnisse:Eventliste'],\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 80,
+        "wires": [
+            [
+                "d1ff5401d73e9a1d"
+            ]
+        ]
+    },
+    {
+        "id": "d1ff5401d73e9a1d",
+        "type": "ui-control",
+        "z": "8541444b36ac495a",
+        "name": "",
+        "ui": "1739e78f07e241af",
+        "events": "change",
+        "x": 1200,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6e547dd1e9eac76",
+        "type": "change",
+        "z": "8541444b36ac495a",
+        "name": "init",
+        "rules": [
+            {
+                "t": "set",
+                "p": "eventID",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "5cd9ab64949f423f"
+            ]
+        ]
+    },
+    {
+        "id": "30a78a611d8aa30c",
+        "type": "switch",
+        "z": "8541444b36ac495a",
+        "name": "",
+        "property": "eventID",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "a6e547dd1e9eac76"
+            ],
+            [
+                "da37c038d6a38465"
+            ]
+        ]
+    },
+    {
+        "id": "da37c038d6a38465",
+        "type": "change",
+        "z": "8541444b36ac495a",
+        "name": "init",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "_client",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 300,
+        "wires": [
+            [
+                "5cd9ab64949f423f"
+            ]
+        ]
+    },
+    {
+        "id": "45eabd12e3e314ce",
+        "type": "link in",
+        "z": "8541444b36ac495a",
+        "name": "Eventanderung",
+        "links": [
+            "618aede6146cca60"
+        ],
+        "x": 55,
+        "y": 120,
+        "wires": [
+            [
+                "fe4a128b89febbaf"
+            ]
+        ]
+    },
+    {
+        "id": "f78f64e2d65dca66",
+        "type": "template",
+        "z": "8541444b36ac495a",
+        "name": "Eventdaten holen",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT * FROM events WHERE ID={{flow.eventID}} ",
+        "output": "str",
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "3920a3f268b40e74"
+            ]
+        ]
+    },
+    {
+        "id": "3920a3f268b40e74",
+        "type": "sqlite",
+        "z": "8541444b36ac495a",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "ef6a86e69f4cc1fe"
+            ]
+        ]
+    },
+    {
+        "id": "ef6a86e69f4cc1fe",
+        "type": "change",
+        "z": "8541444b36ac495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "EventInfo",
+                "pt": "flow",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 140,
+        "wires": [
+            [
+                "5cd9ab64949f423f"
+            ]
+        ]
+    },
+    {
+        "id": "d794a1e6b751203c",
+        "type": "function",
+        "z": "8541444b36ac495a",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3cd342af7a5b2f66",
+        "type": "change",
+        "z": "8541444b36ac495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.html",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1010,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6696a73f0571c7d3",
+        "type": "debug",
+        "z": "826fee82f1459e6d",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "eb165ae674790a5c",
+        "type": "inject",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Erstelle",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "7b33da4e04bab4fe"
+            ]
+        ]
+    },
+    {
+        "id": "938d3f0492025256",
+        "type": "inject",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Erstelle",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "59e067dfd128395b"
+            ]
+        ]
+    },
+    {
+        "id": "f514244f3f459025",
+        "type": "inject",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Erstelle",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "e524e498b838bbc0"
+            ]
+        ]
+    },
+    {
+        "id": "ea8a2fbbb2aa5dde",
+        "type": "inject",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Löschen Tabelle Mitgliedertabelle",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Drop TABLE mitglieder ",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 400,
+        "wires": [
+            [
+                "3d0209851edaf706"
+            ]
+        ]
+    },
+    {
+        "id": "e4a8aafc721b01a7",
+        "type": "inject",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Löschen Tabelle Events",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DROP TABLE events ",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 460,
+        "wires": [
+            [
+                "3d0209851edaf706"
+            ]
+        ]
+    },
+    {
+        "id": "5656375c9af40db2",
+        "type": "inject",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Löschen Ergebnisse",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Drop TABLE ergebnisse",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "3d0209851edaf706"
+            ]
+        ]
+    },
+    {
+        "id": "5a7e51956eb74e56",
+        "type": "comment",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Löschen von Tabellen",
+        "info": "",
+        "x": 200,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "fb9c2d4edf736c73",
+        "type": "comment",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Erstellen von Tabellen",
+        "info": "",
+        "x": 200,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3d0209851edaf706",
+        "type": "sqlite",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "mydb": "c422645b457867f7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 650,
+        "y": 300,
+        "wires": [
+            [
+                "6696a73f0571c7d3"
+            ]
+        ]
+    },
+    {
+        "id": "7b33da4e04bab4fe",
+        "type": "template",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": " Tabelle Mitgliedertabelle",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "CREATE TABLE IF NOT EXISTS mitglieder \n                (id INTEGER PRIMARY KEY, \n                 Name TEXT, \n                 Vorname TEXT,  \n                 mgnr INTEGER,\n                 activ INTEGER DEFAULT (1),\n                 \"verein\" TEXT DEFAULT 'Gerzn',\n                 geloescht INTEGER DEFAULT (0))",
+        "output": "str",
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "3d0209851edaf706"
+            ]
+        ]
+    },
+    {
+        "id": "59e067dfd128395b",
+        "type": "template",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Tabelle Events",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "CREATE TABLE IF NOT EXISTS events \n    (   id INTEGER PRIMARY KEY,\n        datum TEXT,\n        event TEXT,        \n        waffe TEXT,\n        anz_schuesse INTEGER,\n        durchgaenge INTEGER)",
+        "output": "str",
+        "x": 380,
+        "y": 200,
+        "wires": [
+            [
+                "3d0209851edaf706"
+            ]
+        ]
+    },
+    {
+        "id": "e524e498b838bbc0",
+        "type": "template",
+        "z": "826fee82f1459e6d",
+        "g": "36510f613a3fc5f9",
+        "name": "Ergebnisse",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "CREATE TABLE ergebnisse \n    (   id INTEGER PRIMARY KEY,\n        M_ID INTEGER,\n        E_ID INTEGER,\n        DG1 TEXT,\n        DG2 TEXT,\n        DG3 TEXT,\n        DG4 TEXT)",
+        "output": "str",
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "3d0209851edaf706"
+            ]
+        ]
+    },
+    {
+        "id": "d2900b871b073c84",
+        "type": "ui-template",
+        "z": "6874bb3442e9fd04",
+        "group": "",
+        "page": "",
+        "ui": "1739e78f07e241af",
+        "name": "Adminmenu",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n        <v-menu color=\"white\">\n            <template v-slot:activator=\"{ props }\">\n                <v-avatar color=\"green\" v-bind=\"props\" size=\"36px\">\n                \n               \n                <v-img class=\"mx-auto\" width=\"200\" src=\"/img/SV-Logo256.png\"></v-img>\n                </v-avatar>\n               \n            </template>\n            <v-card >\n                <v-layout>\n                    <v-navigation-drawer absolute permanent color=\"white\">\n                        \n                      \n                        <v-list-item color=\"primary\" @click=\"send({topic: 'aboutboxopen', payload: null})\">\n                            <template v-slot:prepend>\n                                <v-icon icon=\"mdi-information\"></v-icon>\n                            </template>\n                            <v-list-item-title>Über</v-list-item-title>\n                        </v-list-item>\n                       \n                    </v-navigation-drawer>\n            \n                    <v-main style=\"height: 50px;\"></v-main>\n                </v-layout>\n            </v-card>\n        </v-menu>   \n    </Teleport>\n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 270,
+        "y": 80,
+        "wires": [
+            [
+                "ca3e062357a1e380"
+            ]
+        ]
+    },
+    {
+        "id": "b7774ecb1b6e22db",
+        "type": "ui-template",
+        "z": "6874bb3442e9fd04",
+        "group": "",
+        "page": "",
+        "ui": "1739e78f07e241af",
+        "name": "Aboutbox",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <v-dialog class=\"pa-8 text-center\" v-model=\"dialog\" >\n        <v-row>\n            <v-col cols=\"12\">\n                <v-card class=\"mx-auto\" width=\"300\" hight=\"400\" max-width=\"90%\" color=\"white\" :title=\"app.name\" :text=\"'Version: ' + app.version\">\n                   <v-card-text class=\"pb-2\">\n                    <p>\n                        {{app.beschreibung}}<br>\n                        Entwickler: {{app.Entwickler}}<br>\n                        Kontakt: {{app.Kontakt}}<br>\n                    </p>\n                     </v-card-text>\n                     <v-img class=\"mx-auto\" width=\"200\" src=\"/img/SV-Logo256.png\"></v-img>\n                    <v-btn class=\"ma-4\" color=\"black\" @click=\"onSubmit()\">OK</v-btn>\n                </v-card>\n            </v-col>\n        </v-row>\n    </v-dialog>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                dialog: false,\n                app: {}\n            }\n        },\n        mounted () {\n            console.log('hello from mounted')\n            this.$socket.on('msg-input:' + this.id, (msg) => { \n                if (msg && msg.topic === \"aboutboxopen\") {\n                    this.dialog = true // open it\n                    this.app = msg.payload;\n                }\n             })\n        },\n        methods: {\n            onSubmit: function () {\n                this.dialog = false // close it\n                \n            }\n        }\n    }\n</script>\n",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 600,
+        "y": 80,
+        "wires": [
+            [
+                "16d23dedf4470518"
+            ]
+        ]
+    },
+    {
+        "id": "16d23dedf4470518",
+        "type": "debug",
+        "z": "6874bb3442e9fd04",
+        "name": "debug 51",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "310885b7091f3fa4",
+        "type": "ui-template",
+        "z": "6874bb3442e9fd04",
+        "d": true,
+        "group": "",
+        "page": "",
+        "ui": "1739e78f07e241af",
+        "name": "Adminmenu",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n        <v-menu color=\"white\">\n            <template v-slot:activator=\"{ props }\">\n                <v-avatar color=\"green\" v-bind=\"props\">\n                    <span class=\"text-h7\">TEXT</span>\n                </v-avatar>\n                <strong>&nbsp;</strong>\n            </template>\n            <v-card class=\"mx-auto\" width=\"256\">\n                <v-layout>\n                    <v-navigation-drawer absolute permanent color=\"white\">\n                        <v-list>\n                            <v-list-item prepend-icon=\"mdi-account-circle-outline\" :subtitle=\"user.id\" :title=\"user.name\">\n                            </v-list-item>\n                        </v-list>\n            \n                        <v-divider>DIV</v-divider>\n                        <v-list-item color=\"primary\" @click=\"send({topic: 'aboutboxopen', payload: null})\">\n                            <template v-slot:prepend>\n                                <v-icon icon=\"mdi-logout\"></v-icon>\n                            </template>\n                            <v-list-item-title>Über</v-list-item-title>\n                        </v-list-item>\n                        <v-list lines=\"false\" density=\"compact\" nav>\n                            <v-list-item color=\"primary\" @click=\"send({topic: 'logout', payload: null})\">\n                                <template v-slot:prepend>\n                                    <v-icon icon=\"mdi-logout\"></v-icon>\n                                </template>\n                                <v-list-item-title>Logout</v-list-item-title>\n                            </v-list-item>\n                        </v-list>\n                    </v-navigation-drawer>\n            \n                    <v-main style=\"height: 354px;\"></v-main>\n                </v-layout>\n            </v-card>\n        </v-menu>   \n    </Teleport>\n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 270,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca3e062357a1e380",
+        "type": "change",
+        "z": "6874bb3442e9fd04",
+        "name": "appInfo",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "app",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 80,
+        "wires": [
+            [
+                "b7774ecb1b6e22db"
+            ]
+        ]
+    }
+]
