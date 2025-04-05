@@ -109,7 +109,6 @@
             "ui-control"
         ],
         "showPathInSidebar": false,
-        "showPageTitle": false,
         "navigationStyle": "default",
         "titleBarStyle": "default"
     },
@@ -395,7 +394,7 @@
                 "t": "set",
                 "p": "app",
                 "pt": "global",
-                "to": "{\"name\":\"ResultCouter\",\"version\":\"1.1.0\",\"beschreibung\":\"Eine Ergebniserfassung geschrieben für den Schützenverein Göritzhain 1992 e.V\",\"Entwickler\":\"JOErICH\",\"Kontakt\":\"support@joerich.de\"}",
+                "to": "{\"name\":\"ResultCouter\",\"version\":\"1.1.1\",\"beschreibung\":\"Eine Ergebniserfassung geschrieben für den Schützenverein Göritzhain 1992 e.V\",\"Entwickler\":\"JOErICH\",\"Kontakt\":\"support@joerich.de\"}",
                 "tot": "json"
             }
         ],
@@ -506,7 +505,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\" :headers=\"headers\"  :items-per-page=\"itemsPerPage\"  items-per-page-text=\"Mitglieder pro Seite\" :items-per-page-options=\"proseite\">\n       \n    <template v-slot:item.edit=\"{ item }\">\n    \n      <v-chip class=\"chipsize2\" color=\"yellow\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'aendern')\">ändern</v-btn> \n      </v-chip>\n      <v-chip class=\"chipsize2\" :color=\"getChipColor(item)\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'activ')\">{{getButtonText(item)}}</v-btn>\n      </v-chip>\n      <v-chip class=\"chipsize\" color=\"red\">\n        <v-btn :ripple=\"true\" variant=\"plain\" @click=\"onClick(item,'loeschen')\">-</v-btn>\n      </v-chip>\n    </template>\n\n    \n    </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'MitgliedsNR', value: 'mgnr',title:'NR',sortable:true },\n          { text: 'Name', value: 'Name',title:'Name',sortable:true},\n          { text: 'Vorname',value:'Vorname',title:'Vorname',sortable:true},\n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'mgnr', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n        \n        \n      }\n    },\n    methods: {\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action = action;\n          this.send({ payload });\n      }},\n     \n  \n      evIcon: function (item) {\n        if (item !== undefined ) {\n          if (item.ev == \"yes\") {\n            return 'mdi-car-electric';\n          } else {\n            return 'mdi-car';\n          }\n        }\n      },\n      getButtonText: function (item) {\n        if (item !== undefined ) {\n        if (item.activ == 0) {\n        return 'inactiv';\n        } else {\n        return 'activ';\n        }\n        }\n      },\n      getChipColor: function (item) {\n        if (item !== undefined ) {\n          if (item.activ == 0) {\n            return 'blue';\n            } else {\n               return 'green';\n          }\n        }\n      }\n    }\n  }\n</script>\n<style>\n  .chipsize {\n    width: 35px;\n    justify-content: center;\n  }\n  .chipsize2 {\n  width: 80px;\n  justify-content: center;\n  }\n</style>",
+        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n  <v-text-field v-model=\"search\" label=\"Suchen\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details> </v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\" :sort-by.sync=\"sortBy\"\n      :sort-desc.sync=\"sortDesc\" :headers=\"headers\"  :items-per-page=\"itemsPerPage\"  items-per-page-text=\"Mitglieder pro Seite\" :items-per-page-options=\"proseite\">\n       \n    <template v-slot:item.edit=\"{ item }\">\n    \n      <v-chip class=\"chipsize2\" color=\"yellow\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'aendern')\">ändern</v-btn> \n      </v-chip>\n      <v-chip class=\"chipsize2\" :color=\"getChipColor(item)\" color=\"primary\" variant=\"flat\">\n        <v-btn variant=\"plain\" @click=\" onClick(item,'activ')\">{{getButtonText(item)}}</v-btn>\n      </v-chip>\n      <v-chip class=\"chipsize\" color=\"red\">\n        <v-btn :ripple=\"true\" variant=\"plain\" @click=\"onClick(item,'loeschen')\">-</v-btn>\n      </v-chip>\n    </template>\n\n    \n    </v-data-table>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        headers: [\n          { text: 'MitgliedsNR', value: 'mgnr',title:'NR',sortable:true },\n          { text: 'Name', value: 'Name',title:'Name',sortable:true},\n          { text: 'Vorname',value:'Vorname',title:'Vorname',sortable:true},\n          { text: 'Verein',value:'verein',title:'Verein',sortable:true},\n          { text: 'edit',value:'edit'}        ],\n        search: '',\n        sortBy: [{ key: 'mgnr', order:'desc'}],\n        sortDesc: false,\n        itemsPerPage:5,\n        proseite: [\n          { value: 5, title: '5' },\n          { value: 10, title: '10' },\n          { value: 25, title: '25' },\n          { value: -1, title: 'Alle' }\n        ],\n        \n        \n      }\n    },\n    methods: {\n      onClick: function (item,action) {\n        if (item !== undefined ) {\n          const payload = item;\n          payload.action = action;\n          this.send({ payload });\n      }},\n     \n  \n      evIcon: function (item) {\n        if (item !== undefined ) {\n          if (item.ev == \"yes\") {\n            return 'mdi-car-electric';\n          } else {\n            return 'mdi-car';\n          }\n        }\n      },\n      getButtonText: function (item) {\n        if (item !== undefined ) {\n        if (item.activ == 0) {\n        return 'inactiv';\n        } else {\n        return 'activ';\n        }\n        }\n      },\n      getChipColor: function (item) {\n        if (item !== undefined ) {\n          if (item.activ == 0) {\n            return 'blue';\n            } else {\n               return 'green';\n          }\n        }\n      }\n    }\n  }\n</script>\n<style>\n  .chipsize {\n    width: 35px;\n    justify-content: center;\n  }\n  .chipsize2 {\n  width: 80px;\n  justify-content: center;\n  }\n</style>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -516,7 +515,7 @@
         "y": 40,
         "wires": [
             [
-                "e93a0b7c077dceb7"
+                "39fdebdf1b3cf6d3"
             ]
         ]
     },
@@ -558,13 +557,21 @@
                 "type": "text",
                 "required": false,
                 "rows": null
+            },
+            {
+                "label": "einfügen / bearbeiten",
+                "key": "update",
+                "type": "switch",
+                "required": false,
+                "rows": null
             }
         ],
         "formValue": {
             "Vorname": "",
             "Name": "",
             "mgnr": "",
-            "verein": ""
+            "verein": "",
+            "update": false
         },
         "payload": "",
         "submit": "Speichern",
@@ -668,7 +675,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "INSERT INTO mitglieder (Name,Vorname,mgnr)  VALUES ('{{payload.Name}}','{{payload.Vorname}}','{{payload.mgnr}}')",
+        "template": "INSERT INTO mitglieder (Name,Vorname,mgnr,verein)  VALUES ('{{payload.Name}}','{{payload.Vorname}}','{{payload.mgnr}}','{{payload.verein}}')",
         "output": "str",
         "x": 650,
         "y": 220,
@@ -929,17 +936,17 @@
         "rules": [
             {
                 "t": "set",
-                "p": "insert",
-                "pt": "flow",
-                "to": "false",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
                 "p": "aendern_ID",
                 "pt": "flow",
                 "to": "payload.id",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.update",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -956,51 +963,24 @@
         ]
     },
     {
-        "id": "e93a0b7c077dceb7",
-        "type": "change",
-        "z": "2a175dcb59821ade",
-        "name": "Setze Insert",
-        "rules": [
-            {
-                "t": "set",
-                "p": "insert",
-                "pt": "flow",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 110,
-        "y": 120,
-        "wires": [
-            [
-                "39fdebdf1b3cf6d3"
-            ]
-        ]
-    },
-    {
         "id": "63ec47cf7be20ab8",
         "type": "switch",
         "z": "2a175dcb59821ade",
         "name": "add or change",
-        "property": "insert",
-        "propertyType": "flow",
+        "property": "payload.update",
+        "propertyType": "msg",
         "rules": [
             {
-                "t": "true"
+                "t": "false"
             },
             {
-                "t": "false"
+                "t": "true"
             }
         ],
         "checkall": "true",
         "repair": true,
         "outputs": 2,
-        "x": 480,
+        "x": 460,
         "y": 220,
         "wires": [
             [
@@ -1021,7 +1001,7 @@
             "79d4cb5ea4270eeb"
         ],
         "x": 965,
-        "y": 200,
+        "y": 160,
         "wires": []
     },
     {
@@ -1868,8 +1848,7 @@
         "wires": [
             [
                 "5d208c688e7b2d7c",
-                "04c592cf615bf47c",
-                "3da6d3c8b271405f"
+                "04c592cf615bf47c"
             ]
         ]
     },
@@ -1878,7 +1857,7 @@
         "type": "debug",
         "z": "b4599c1f41a6367f",
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1886,8 +1865,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 400,
+        "x": 1400,
+        "y": 60,
         "wires": []
     },
     {
@@ -2111,7 +2090,9 @@
         "x": 1140,
         "y": 60,
         "wires": [
-            []
+            [
+                "3da6d3c8b271405f"
+            ]
         ]
     },
     {
@@ -3216,7 +3197,7 @@
         "type": "debug",
         "z": "826fee82f1459e6d",
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3518,7 +3499,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n        <v-menu color=\"white\">\n            <template v-slot:activator=\"{ props }\">\n                <v-avatar color=\"green\" v-bind=\"props\" size=\"36px\">\n                \n               \n                <v-img class=\"mx-auto\" width=\"200\" src=\"/img/SV-Logo256.png\"></v-img>\n                </v-avatar>\n               \n            </template>\n            <v-card >\n                <v-layout>\n                    <v-navigation-drawer absolute permanent color=\"white\">\n                        \n                      \n                        <v-list-item color=\"primary\" @click=\"send({topic: 'aboutboxopen', payload: null})\">\n                            <template v-slot:prepend>\n                                <v-icon icon=\"mdi-information\"></v-icon>\n                            </template>\n                            <v-list-item-title>Über</v-list-item-title>\n                        </v-list-item>\n                       \n                    </v-navigation-drawer>\n            \n                    <v-main style=\"height: 50px;\"></v-main>\n                </v-layout>\n            </v-card>\n        </v-menu>   \n    </Teleport>\n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
+        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n        <v-menu color=\"white\">\n            <template v-slot:activator=\"{ props }\">\n                <v-avatar color=\"green\" v-bind=\"props\" size=\"36px\">\n                \n               \n                <v-img class=\"mx-auto\" width=\"200\" src=\"/img/SV-Logo256.png\"></v-img>\n                </v-avatar>\n               \n            </template>\n            <v-card >\n                <v-layout>\n                    <v-navigation-drawer absolute permanent color=\"white\">\n                        \n                      \n                        <v-list-item color=\"primary\" @click=\"send({topic: 'aboutboxopen', payload: null})\">\n                            <template v-slot:prepend>\n                                <v-icon icon=\"mdi-information\"></v-icon>\n                            </template>\n                            <v-list-item-title>Über</v-list-item-title>\n                        </v-list-item>\n                       \n                    </v-navigation-drawer>\n            \n                    <v-main style=\"height: 50px;\"></v-main>\n                </v-layout>\n            </v-card>\n        </v-menu>   \n    </Teleport>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">5</Teleport>\n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
