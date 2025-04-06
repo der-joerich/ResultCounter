@@ -109,7 +109,6 @@
             "ui-control"
         ],
         "showPathInSidebar": false,
-        "showPageTitle": false,
         "navigationStyle": "default",
         "titleBarStyle": "default"
     },
@@ -395,7 +394,7 @@
                 "t": "set",
                 "p": "app",
                 "pt": "global",
-                "to": "{\"name\":\"ResultCouter\",\"version\":\"1.1.0\",\"beschreibung\":\"Eine Ergebniserfassung geschrieben für den Schützenverein Göritzhain 1992 e.V\",\"Entwickler\":\"JOErICH\",\"Kontakt\":\"support@joerich.de\"}",
+                "to": "{\"name\":\"ResultCouter\",\"version\":\"1.1.1\",\"beschreibung\":\"Eine Ergebniserfassung geschrieben für den Schützenverein Göritzhain 1992 e.V\",\"Entwickler\":\"JOErICH\",\"Kontakt\":\"support@joerich.de\"}",
                 "tot": "json"
             }
         ],
@@ -3585,6 +3584,7 @@
         "id": "ca3e062357a1e380",
         "type": "change",
         "z": "6874bb3442e9fd04",
+        "d": true,
         "name": "appInfo",
         "rules": [
             {
